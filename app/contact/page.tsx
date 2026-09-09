@@ -113,12 +113,13 @@ export default function ContactPage() {
 
           {/* Map placeholder */}
           <div className="overflow-hidden rounded-2xl border border-border">
-            <iframe
-              title="Royal Route Travel & Tours location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=73.0%2C31.4%2C74.5%2C33.8&layer=mapnik"
-              className="h-56 w-full"
-              loading="lazy"
-            />
+          <iframe
+  title="Royal Route Travel & Tours location"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.89765880051!2d74.35373827442424!3d31.499496748175073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919057cc5e51607%3A0x4f3972c61b46807e!2sRoyal%20Route%20Travel%20%26%20Tour's!5e0!3m2!1sen!2s!4v1788952704139!5m2!1sen!2s"
+  className="h-56 w-full rounded-lg border-0"
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
           </div>
         </div>
 
