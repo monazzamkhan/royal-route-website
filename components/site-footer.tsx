@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mountain, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 import { navLinks, paymentMethods, site } from '@/lib/site'
 import { FacebookIcon, InstagramIcon, WhatsappIcon } from '@/components/brand-icons'
 
@@ -9,17 +9,19 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex size-9 items-center justify-center rounded-lg bg-gold text-gold-foreground">
-                <Mountain className="size-5" />
-              </span>
+            <Link href="/" className="flex items-center gap-2.5">
+              <img 
+                src={site.logo || "/images/logo.png"} 
+                alt={site.name} 
+                className="h-10 w-auto object-contain brightness-0 invert" 
+              />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-base font-bold">Royal Route</span>
                 <span className="text-[0.66rem] tracking-wide opacity-80">
                   TRAVEL &amp; TOURS
                 </span>
               </span>
-            </div>
+            </Link>
             <p className="mt-4 text-sm leading-relaxed opacity-80">{site.tagline}</p>
             <div className="mt-5 flex items-center gap-2.5">
               <a
