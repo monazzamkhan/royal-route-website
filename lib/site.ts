@@ -2,6 +2,7 @@ export const site = {
   name: 'Royal Route Travel & Tours',
   shortName: 'Royal Route',
   tagline: 'Your Adventure, Our Responsibility!',
+  logo: '/logo.png',
   phone: '0307-4326061',
   phoneIntl: '+923074326061',
   email: 'royalroutetraveltours@gmail.com',
