@@ -210,7 +210,7 @@ Please confirm my booking.`
                 </span>
                 <span>
                   <span className="block text-sm font-semibold text-foreground">
-                    Safepay Secure Gateway
+                    Credit / Debit Card (Visa & Mastercard)
                   </span>
                   <span className="block text-xs text-muted-foreground">
                     Cards, wallets &amp; bank — instant confirmation
