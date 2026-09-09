@@ -7,7 +7,7 @@ import { site } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'About Us | Royal Route Travel & Tours',
   description:
-    'Learn about Royal Route Travel & Tours — a registered Pakistani tour operator with 200+ successful trips, experienced guides and a safe, family-friendly approach.',
+    'Learn about Royal Route Travel & Tours — a registered (Registration No: D078804) Pakistani tour operator with 200+ successful trips, experienced guides and a safe, family-friendly approach.',
 }
 
 const stats = [
@@ -19,13 +19,13 @@ const stats = [
 
 const clients = [
   'University of the Punjab',
-  'UET Lahore',
+  'Fatima Memorial Medical Collage & University',
   'COMSATS University',
-  'Government College University',
-  'National Bank of Pakistan',
-  'Nestlé Pakistan',
-  'Descon Engineering',
-  'Local Corporate Retreats',
+  'Tanzeem ul Lissan',
+  'Vision Technology and Corporation',
+  'Mustafavi Students Movement (MSM)',
+  'Superior University',
+  'Allied School',
 ]
 
 export default function AboutPage() {
