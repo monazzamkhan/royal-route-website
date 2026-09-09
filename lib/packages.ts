@@ -62,7 +62,7 @@ export const packages: TourPackage[] = [
     ],
     soloPrice: 15499,
     couplePrice: 36000,
-    childPrice: 10999,
+    childPrice: 8999,
     itinerary: [
       {
         day: 'Day 0',
@@ -125,7 +125,7 @@ export const packages: TourPackage[] = [
     ],
     soloPrice: 15499,
     couplePrice: 36000,
-    childPrice: 10999,
+    childPrice: 8999,
     itinerary: [
       {
         day: 'Day 0',
@@ -184,9 +184,9 @@ export const packages: TourPackage[] = [
       'Passu Cones',
       'Khunjerab Pass',
     ],
-    soloPrice: 19000,
-    couplePrice: 44000,
-    childPrice: 10999,
+    soloPrice: 23000,
+    couplePrice: 52000,
+    childPrice: 13999,
     itinerary: [
       {
         day: 'Day 0',
@@ -253,8 +253,8 @@ export const packages: TourPackage[] = [
       'Hunza Valley',
       'Attabad Lake',
     ],
-    soloPrice: 34000,
-    couplePrice: 76000,
+    soloPrice: 36000,
+    couplePrice: 78000,
     childPrice: 22000,
     itinerary: [
       {
