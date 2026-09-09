@@ -9,7 +9,7 @@ type Counts = { solo: number; couple: number; child: number }
 
 const rows = [
   { key: 'solo' as const, label: 'Solo Adult', note: 'per head' },
-  { key: 'couple' as const, label: 'Couple', note: 'room sharing' },
+  { key: 'couple' as const, label: 'Couple', note: 'separate room' },
   { key: 'child' as const, label: 'Child', note: 'discounted' },
 ]
 
