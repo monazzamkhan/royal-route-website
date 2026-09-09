@@ -95,7 +95,7 @@ export default function AboutPage() {
                 A registered, accountable operator
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Royal Route Travel &amp; Tours operates as a registered travel
+                Royal Route Travel &amp; Tours operates as a registered (Registration No: D078804) travel
                 business in Pakistan, working with verified hotels and licensed
                 transport partners. Every booking is documented and every trip is
                 led by a responsible tour manager — because your adventure is our
