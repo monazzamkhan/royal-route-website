@@ -40,8 +40,10 @@ const reasons = [
 ]
 
 export default function HomePage() {
-  // Home page par top 3-Day Most Loved Packages filter kiye hain
-  const featuredPackages = packages.filter((pkg) => pkg.days === 3).slice(0, 3)
+  // Includes 3-Day packages plus 5-Day Hunza package
+  const featuredPackages = packages.filter(
+    (pkg) => pkg.days === 3 || pkg.slug.includes('hunza')
+  ).slice(0, 4)
 
   return (
     <>
@@ -109,30 +111,31 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Top 3 Featured Cards */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* 4 Featured Cards Grid */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featuredPackages.map((pkg) => (
             <PackageCard key={pkg.slug} pkg={pkg} />
           ))}
         </div>
 
-        {/* Modern "Browse All Packages" Call-To-Action Box */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-gradient-to-r from-primary/10 via-background to-secondary/30 p-8 shadow-sm">
-          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+        {/* High-Contrast Standout "Browse All Packages" Banner */}
+        <div className="mt-14 overflow-hidden rounded-3xl border border-gold/40 bg-slate-950 p-8 shadow-xl text-white relative">
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
+          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left relative z-10">
             <div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <Sparkles className="size-3.5" /> Looking for Weekend or Day Trips?
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+                <Sparkles className="size-4 text-gold" /> Weekend Escapes &amp; Grand Expeditions
               </span>
-              <h3 className="mt-1 font-display text-2xl font-bold text-foreground">
+              <h3 className="mt-2 font-display text-2xl font-extrabold text-white sm:text-3xl">
                 Explore All 1-Day, 2-Day &amp; Grand Tours
               </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Discover our full collection of short day escapes, weekend getaways, and multi-day northern expeditions.
+              <p className="mt-2 text-sm text-slate-300 max-w-xl leading-relaxed">
+                Looking for quick 1-day hikes, weekend getaways or long holiday trips? Discover our complete collection.
               </p>
             </div>
             <Link
               href="/packages"
-              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
+              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-gold px-7 py-4 text-sm font-bold text-slate-950 shadow-lg transition-all hover:bg-yellow-400 hover:scale-105"
             >
               Browse All Packages <ArrowRight className="size-4" />
             </Link>
@@ -178,7 +181,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-medium text-primary">Happy Travelers</p>
-          <h2 className="mt-1 font-display text-3xl font-bold text-foreground text-balance sm:text-4xl">
+          <h2 className="mt-1 font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
             What Our Guests Say
           </h2>
         </div>
