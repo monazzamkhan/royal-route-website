@@ -166,6 +166,70 @@ export const packages: TourPackage[] = [
     excluded: [...commonExcluded, 'Jeep charges to Saif ul Malook & Siri Paye'],
   },
   {
+    slug: 'swat-kalam-malam-jabba',
+    name: 'Swat, Kalam & Malam Jabba Tour',
+    region: 'Khyber Pakhtunkhwa — Swat Valley',
+    duration: '3 Days & 2 Nights',
+    days: 3,
+    nights: 2,
+    image: '/images/swat-kalam.png',
+    summary:
+      'Lush green valleys, roaring rivers, snow-capped peaks and ski resorts — a perfect 3-day getaway to Swat, Kalam and Malam Jabba.',
+    highlights: [
+      'Fizagat',
+      'Malam Jabba Resort',
+      'Bahrain',
+      'Kalam Bazaar',
+      'Ushu Forest',
+      'Mahudand Lake',
+      'Paloga Village',
+    ],
+    soloPrice: 15499,
+    couplePrice: 36000,
+    childPrice: 8999,
+    itinerary: [
+      {
+        day: 'Day 0',
+        title: 'Departure Night',
+        details: [
+          'Evening pickup from Lahore & Islamabad.',
+          'Overnight journey towards Swat via Hazara / Swat Motorway.',
+        ],
+      },
+      {
+        day: 'Day 1',
+        title: 'Fizagat & Malam Jabba Sightseeing',
+        details: [
+          'Arrival & breakfast at Fizagat.',
+          'Drive towards Malam Jabba Resort (enjoy Chairlift & Zipline).',
+          'Travel back to Fizagat / Kalam for dinner and overnight stay.',
+        ],
+      },
+      {
+        day: 'Day 2',
+        title: 'Jeep Safari to Ushu Forest & Mahudand Lake',
+        details: [
+          'Breakfast at hotel in Kalam.',
+          'Transfer to 4x4 Jeeps for Mahudand Lake excursion.',
+          'Visit Ushu Forest, Paloga Village, and Mahudand Lake.',
+          'Evening back to Kalam Bazaar for dinner and overnight stay.',
+        ],
+      },
+      {
+        day: 'Day 3',
+        title: 'Shamozai Tower & Return Journey',
+        details: [
+          'Early breakfast and departure towards Shamozai Tower.',
+          'Visit Shamozai Tower and start return journey.',
+          'Dinner stopover at Shinwari Rawat.',
+          'Late night arrival back in Islamabad & Lahore.',
+        ],
+      },
+    ],
+    included: commonIncluded,
+    excluded: [...commonExcluded, 'Jeep charges to Mahudand Lake', 'Malam Jabba entry/activities fees'],
+  },
+  {
     slug: 'hunza-valley-expedition',
     name: 'Hunza Valley Expedition',
     region: 'Gilgit-Baltistan — Hunza',
