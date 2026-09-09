@@ -236,7 +236,7 @@ export const packages: TourPackage[] = [
     duration: '2 Days & 1 Night',
     days: 2,
     nights: 1,
-    image: '/images/swat-kalam.png',
+    image: '/images/malam-jabba.png',
     summary:
       'Explore the breathtaking Swat Valley, scenic Fizagat, Shamozai Tower, and the thrilling ski resort of Malam Jabba.',
     highlights: [
