@@ -345,6 +345,97 @@ export const packages: TourPackage[] = [
     excluded: commonExcluded,
   },
   {
+    slug: 'umbrella-waterfall-khanpur-dam',
+    name: 'Umbrella Waterfall & Khanpur Dam Tour',
+    region: 'Khyber Pakhtunkhwa — Abbottabad & Haripur',
+    duration: '1 Day Trip',
+    days: 1,
+    nights: 0,
+    image: '/images/umbrella.png',
+    summary:
+      'A refreshing day trip to the stunning Umbrella Waterfall in Sajikot followed by water sports and scenic views at Khanpur Dam.',
+    highlights: [
+      'Havelian',
+      'Sajikot / Umbrella Waterfall Hike',
+      'Khanpur Dam & Lake',
+      'Water Sports & Boating Opportunities',
+    ],
+    soloPrice: 9000,
+    couplePrice: 18000,
+    childPrice: 5000,
+    itinerary: [
+      {
+        day: 'Day 0',
+        title: 'Departure',
+        details: [
+          'Late night departure from Lahore via AC Coaster.',
+          'Short stopover at Mian Gee.',
+          'Overnight journey towards Havelian.',
+        ],
+      },
+      {
+        day: 'Day 1',
+        title: 'Waterfall Hike & Khanpur Water Sports',
+        details: [
+          'Arrival and breakfast at Havelian.',
+          'Drive to Sajikot and hike down to explore Umbrella Waterfall.',
+          'Travel to Khanpur Dam for sightseeing and boating / water activities.',
+          'Start return journey towards Lahore with a dinner stop at Shinwari Rawat.',
+          'Late night arrival back in Lahore.',
+        ],
+      },
+    ],
+    included: commonIncluded,
+    excluded: [
+      ...commonExcluded,
+      'Water sports, boating, jet ski, and paragliding tickets at Khanpur Dam',
+    ],
+  },
+  {
+    slug: 'mushkpuri-top-donga-gali',
+    name: 'Mushkpuri Top & Donga Gali Day Tour',
+    region: 'Khyber Pakhtunkhwa — Galyat Region',
+    duration: '1 Day Trip',
+    days: 1,
+    nights: 0,
+    image: '/images/mushkpuri.png',
+    summary:
+      'A thrilling day trek to the 9,200 ft Mushkpuri Top in Nathia Gali, featuring pine forests, alpine views, and Donga Gali.',
+    highlights: [
+      'Donga Gali',
+      'Mushkpuri Top Trek (9,200 ft)',
+      'Ayubia National Park Views',
+      'Pine Forest Trail',
+    ],
+    soloPrice: 9000,
+    couplePrice: 18000,
+    childPrice: 5000,
+    itinerary: [
+      {
+        day: 'Day 0',
+        title: 'Departure',
+        details: [
+          'Late night departure from Lahore via AC Coaster.',
+          'Short stopover at Mian Gee.',
+          'Overnight journey towards Galyat region.',
+        ],
+      },
+      {
+        day: 'Day 1',
+        title: 'Trek to Mushkpuri Top & Return',
+        details: [
+          'Arrival and fresh-up with breakfast at Donga Gali.',
+          'Start trekking through the scenic pine forest trail to Mushkpuri Top.',
+          'Explore the lush green meadow at top and capture photos.',
+          'Trek back down to Donga Gali and start return journey.',
+          'Short stay for dinner at Shinwari Rawat before late night arrival in Lahore.',
+        ],
+      },
+    ],
+    included: commonIncluded,
+    excluded: commonExcluded,
+  },
+  {
     slug: 'hunza-valley-expedition',
     name: 'Hunza Valley Expedition',
     region: 'Gilgit-Baltistan — Hunza',
