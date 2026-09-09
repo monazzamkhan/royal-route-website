@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Menu, X, Phone, Mountain } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { navLinks, site, whatsappLink } from '@/lib/site'
 import { WhatsappIcon } from '@/components/brand-icons'
@@ -35,17 +35,11 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Mountain className="size-5" />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-base font-bold tracking-tight text-foreground">
-              Royal Route
-            </span>
-            <span className="text-[0.66rem] font-medium tracking-wide text-muted-foreground">
-              TRAVEL &amp; TOURS
-            </span>
-          </span>
+          <img 
+            src={site.logo || "/logo.png"} 
+            alt={site.name} 
+            className="h-10 w-auto object-contain" 
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
