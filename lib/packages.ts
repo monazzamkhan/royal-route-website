@@ -230,6 +230,121 @@ export const packages: TourPackage[] = [
     excluded: [...commonExcluded, 'Jeep charges to Mahudand Lake', 'Malam Jabba entry/activities fees'],
   },
   {
+    slug: 'swat-malam-jabba',
+    name: 'Swat & Malam Jabba Tour',
+    region: 'Khyber Pakhtunkhwa — Swat Valley',
+    duration: '2 Days & 1 Night',
+    days: 2,
+    nights: 1,
+    image: '/images/swat-kalam.png',
+    summary:
+      'Explore the breathtaking Swat Valley, scenic Fizagat, Shamozai Tower, and the thrilling ski resort of Malam Jabba.',
+    highlights: [
+      'Fizagat',
+      'Malam Jabba Ski Resort',
+      'Chairlift & Zipline Activities',
+      'Shamozai Tower',
+    ],
+    soloPrice: 12000,
+    couplePrice: 27000,
+    childPrice: 7000,
+    itinerary: [
+      {
+        day: 'Day 0',
+        title: 'Departure Night',
+        details: [
+          'Pickup from Lahore & Islamabad (26 Number Daewoo Terminal).',
+          'Short stopover at Mian Gee.',
+          'Overnight drive towards Fizagat, Swat.',
+        ],
+      },
+      {
+        day: 'Day 1',
+        title: 'Fizagat & Malam Jabba Exploration',
+        details: [
+          'Arrival and fresh-up with breakfast at Fizagat.',
+          'Drive towards Malam Jabba Hill Station & Resort.',
+          'Enjoy scenic mountain views, Chairlift, and Zipline (personal expense).',
+          'Travel back to Fizagat for dinner and overnight hotel stay.',
+        ],
+      },
+      {
+        day: 'Day 2',
+        title: 'Shamozai Tower & Return Journey',
+        details: [
+          'Early morning breakfast at 07:00 AM.',
+          'Visit the historic Shamozai Tower.',
+          'Start return journey towards hometowns.',
+          'Dinner stop at Shinwari Rawat (personal expense).',
+          'Late night arrival back in Islamabad & Lahore.',
+        ],
+      },
+    ],
+    included: commonIncluded,
+    excluded: [
+      ...commonExcluded,
+      'Chairlift, Zipline & activity tickets at Malam Jabba',
+    ],
+  },
+  {
+    slug: 'shogran-siri-paye-2-days',
+    name: 'Shogran & Siri Paye Tour',
+    region: 'Khyber Pakhtunkhwa — Kaghan Valley',
+    duration: '2 Days & 1 Night',
+    days: 2,
+    nights: 1,
+    image: '/images/shogran.png',
+    summary:
+      'Escape into the lush green plateau of Shogran, Kawai Waterfall, and the majestic Siri Paye Meadows surrounded by mountain peaks.',
+    highlights: [
+      'Balakot',
+      'Kawai Waterfall',
+      'Shogran Hill Station',
+      'Siri Paye Meadows & Lake',
+      'Jeep Safari Included',
+    ],
+    soloPrice: 12000,
+    couplePrice: 27000,
+    childPrice: 7000,
+    itinerary: [
+      {
+        day: 'Day 0',
+        title: 'Departure Night',
+        details: [
+          'Late night pickup from Lahore & Islamabad (26 Number Daewoo Terminal).',
+          'Short stopover at Mian Gee.',
+          'Overnight drive towards Balakot.',
+        ],
+      },
+      {
+        day: 'Day 1',
+        title: 'Kawai Waterfall & Siri Paye Meadows',
+        details: [
+          'Arrival and fresh-up with breakfast at Balakot.',
+          'Drive to Kawai Waterfall.',
+          'Jeep ride up to Shogran and explore Siri Paye Meadows.',
+          'Evening back at Shogran hotel for dinner and overnight stay.',
+        ],
+      },
+      {
+        day: 'Day 2',
+        title: 'Shogran Exploration & Return Journey',
+        details: [
+          'Breakfast at hotel at 07:00 AM.',
+          'Explore Shogran Plateau and stop back at Kawai Waterfall.',
+          'Start return journey towards hometowns.',
+          'Dinner stop at Shinwari Rawat.',
+          'Late night arrival back in Islamabad & Lahore.',
+        ],
+      },
+    ],
+    included: [
+      ...commonIncluded,
+      'Jeep Charges for Shogran & Siri Paye',
+    ],
+    excluded: commonExcluded,
+  },
+  {
     slug: 'hunza-valley-expedition',
     name: 'Hunza Valley Expedition',
     region: 'Gilgit-Baltistan — Hunza',
