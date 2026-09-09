@@ -36,10 +36,18 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5">
           <img 
-            src={site.logo || "/logo.png"} 
+            src={site.logo || "/images/logo.png"} 
             alt={site.name} 
             className="h-10 w-auto object-contain" 
           />
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-base font-bold tracking-tight text-foreground">
+              Royal Route
+            </span>
+            <span className="text-[0.66rem] font-medium tracking-wide text-muted-foreground">
+              TRAVEL &amp; TOURS
+            </span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
