@@ -7,6 +7,7 @@ import {
   Award,
   ArrowRight,
   Phone,
+  Sparkles,
 } from 'lucide-react'
 import { packages } from '@/lib/packages'
 import { site, whatsappLink } from '@/lib/site'
@@ -39,9 +40,12 @@ const reasons = [
 ]
 
 export default function HomePage() {
+  // Home page par top 3-Day Most Loved Packages filter kiye hain
+  const featuredPackages = packages.filter((pkg) => pkg.days === 3).slice(0, 3)
+
   return (
     <>
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative isolate overflow-hidden">
         <Image
           src="/images/hero-pakistan.png"
@@ -90,12 +94,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Packages */}
+      {/* Featured Packages Section */}
       <section id="packages" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="font-medium text-primary">Featured Tours</p>
-            <h2 className="mt-1 font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
+            <h2 className="mt-1 font-display text-3xl font-bold text-foreground text-balance sm:text-4xl">
               Our Most Loved Packages
             </h2>
           </div>
@@ -105,10 +109,34 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {packages.map((pkg) => (
+        {/* Top 3 Featured Cards */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredPackages.map((pkg) => (
             <PackageCard key={pkg.slug} pkg={pkg} />
           ))}
+        </div>
+
+        {/* Modern "Browse All Packages" Call-To-Action Box */}
+        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-gradient-to-r from-primary/10 via-background to-secondary/30 p-8 shadow-sm">
+          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <Sparkles className="size-3.5" /> Looking for Weekend or Day Trips?
+              </span>
+              <h3 className="mt-1 font-display text-2xl font-bold text-foreground">
+                Explore All 1-Day, 2-Day &amp; Grand Tours
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Discover our full collection of short day escapes, weekend getaways, and multi-day northern expeditions.
+              </p>
+            </div>
+            <Link
+              href="/packages"
+              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
+            >
+              Browse All Packages <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -117,7 +145,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-medium text-primary">Why Travel With Us</p>
-            <h2 className="mt-1 font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
+            <h2 className="mt-1 font-display text-3xl font-bold text-foreground text-balance sm:text-4xl">
               Your Adventure, Our Responsibility
             </h2>
             <p className="mt-3 text-muted-foreground leading-relaxed">
@@ -150,7 +178,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-medium text-primary">Happy Travelers</p>
-          <h2 className="mt-1 font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
+          <h2 className="mt-1 font-display text-3xl font-bold text-foreground text-balance sm:text-4xl">
             What Our Guests Say
           </h2>
         </div>
