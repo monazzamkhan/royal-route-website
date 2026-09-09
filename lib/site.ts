@@ -19,7 +19,7 @@ export const primaryBank = {
 export const bankAccounts = [
   { bank: 'United Bank Limited (UBL)', title: 'MONAZZAM KHAN', number: 'PK63UNIL0109000282669683' },
   { bank: 'JazzCash', title: 'Royal Route Travel & Tours', number: '0307-4326061' },
-  { bank: 'EasyPaisa', title: 'Royal Route Travel & Tours', number: '0307-4326061' },
+  { bank: 'EasyPaisa', title: 'Royal Route Travel & Tours', number: '0314-4326061' },
 ] as const
 
 export const paymentMethods = ['Safepay', 'UBL Bank', 'JazzCash', 'EasyPaisa'] as const
