@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     'Skardu tour',
     'Royal Route Travel',
   ],
+  verification: {
+    google: 'Qlg97dPgb6eR4m', // Search Console verification tag
+  },
   icons: {
     icon: [
       {
@@ -49,7 +52,6 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
 }
-
 export const viewport: Viewport = {
   colorScheme: 'light',
   themeColor: '#2f6b47',
