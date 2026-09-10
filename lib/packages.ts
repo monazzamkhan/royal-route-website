@@ -77,9 +77,10 @@ export const packages: TourPackage[] = [
         title: 'Kutton & Dhani Waterfall',
         details: [
           'Arrive at Muzaffarabad, freshen up and breakfast.',
-          'Drive along the Neelum River to Kutton (Jagran) Valley.',
+          'Drive along the Neelum River to Keran - Neelum Valley.',
           'Visit Dhani Waterfall and enjoy the riverside.',
-          'Dinner and overnight stay in Kutton / Keran.',
+          'Visit Kundalshai Waterfall and enjoy the riverside.',
+          'Dinner and overnight stay in Keran.',
         ],
       },
       {
@@ -88,7 +89,8 @@ export const packages: TourPackage[] = [
         details: [
           'Drive to Sharda, explore the ancient ruins.',
           'Chairlift & trek up to the stunning Arang Kel meadows.',
-          'Photography at Upper Neelum viewpoints.',
+          'Photography at Arang Kel meadows.',
+          'Traveling back towards keran.',
           'Dinner and overnight stay.',
         ],
       },
@@ -96,7 +98,7 @@ export const packages: TourPackage[] = [
         day: 'Day 3',
         title: 'Return Journey',
         details: [
-          'Breakfast and final shopping for souvenirs.',
+          'Breakfast and Photography at Upper Neelum viewpoints.',
           'Departure back towards Islamabad & Lahore.',
           'Arrive late night, tour concludes.',
         ],
@@ -148,8 +150,8 @@ export const packages: TourPackage[] = [
         day: 'Day 2',
         title: 'Saif ul Malook & Lake Circuit',
         details: [
-          'Morning jeep ride to the majestic Lake Saif ul Malook.',
-          'Optional drive towards Lulusar Lake & Babusar Top.',
+          'Breakfast at Naran.',
+          'Drive towards Lulusar Lake & Babusar Top.',
           'Evening back at Naran, dinner and overnight stay.',
         ],
       },
@@ -157,7 +159,10 @@ export const packages: TourPackage[] = [
         day: 'Day 3',
         title: 'Return Journey',
         details: [
-          'Breakfast and departure towards home cities.',
+          'Breakfast at Naran',
+          'Morning jeep ride to the majestic Lake Saif ul Malook.',
+          'Back towards Naran.',
+          'Departure back towards Islamabad & Lahore.',
           'Scenic stops along the way, arrive late night.',
         ],
       },
