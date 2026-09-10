@@ -29,6 +29,7 @@ export const paymentMethods = ['Cards(Credit/Debit)', 'UBL Bank', 'JazzCash', 'E
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Tour Packages', href: '/packages' },
+  { label: 'Travel Guides', href: '/travel-guides' },
   { label: 'About Us', href: '/about' },
   { label: 'Terms & Policy', href: '/terms' },
   { label: 'Contact Us', href: '/contact' },
