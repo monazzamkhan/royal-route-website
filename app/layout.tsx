@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'Royal Route Travel',
   ],
   verification: {
-    google: 'Qlg97dPgb6eR4m', // Search Console verification tag
+    google: 'QIg97dPgb6eR4muK0l2fzmm-D-py9ZnAmGM5kEC-7c8', // Search Console verification tag
   },
   icons: {
     icon: [
