@@ -2,6 +2,7 @@ export const site = {
   name: 'Royal Route Travel & Tours',
   shortName: 'Royal Route',
   tagline: 'Your Adventure, Our Responsibility!',
+  description: "Royal Route Travel & Tours is the best travel agency in Pakistan offering premium family & corporate tour packages to Naran Kaghan, Swat, Kalam, Kashmir, and Hunza from Lahore & Islamabad.",
   logo: '/images/logo.png',
   phone: '0307-4326061',
   phoneIntl: '+923074326061',
