@@ -12,20 +12,20 @@ export default function NaranGuide() {
           Ultimate Naran Kaghan Travel Guide: Best Places, Road Route & 3-Day Itinerary
         </h1>
         <p className="text-gray-500 text-sm">
-          Published by Royal Route Travel & Tours | Updated for 2026 Season
+          Published by Royal Route Travel & Tours | Updated Season Guide
         </p>
       </div>
 
-      {/* Main Cover Banner */}
+      {/* Main Cover Banner - Real Lake Saif-ul-Muluk */}
       <div className="rounded-2xl overflow-hidden mb-10 shadow-lg border border-gray-100">
         <img
-          src="/guides/siri-paye.jpg"
-          alt="Siri Paye Meadows Shogran Naran Valley"
+          src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1200&auto=format&fit=crop"
+          alt="Lake Saif ul Muluk Naran Kaghan"
           className="w-full h-[350px] md:h-[480px] object-cover"
         />
       </div>
 
-      {/* Main SEO Article Content */}
+      {/* Article Content */}
       <div className="prose max-w-none text-gray-800 space-y-6 text-base md:text-lg leading-relaxed">
         
         <p className="text-xl text-gray-700 font-medium leading-relaxed">
@@ -45,12 +45,12 @@ export default function NaranGuide() {
           The allure of Naran lies in its unique geographic diversity. From the historic legendary charm of Lake Saif-ul-Muluk to the high-altitude mountain pass of Babusar Top, every kilometer traveled offers breathtaking views. Key highlights include:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-gray-700">
-          <li><strong>Pleasant Summer Weather:</strong> While cities like Lahore and Islamabad face intense summer heat, temperatures in Naran range between 10°C to 20°C.</li>
+          <li><strong>Pleasant Summer Weather:</strong> Temperatures in Naran range between comfortable 10°C to 20°C during peak summer months.</li>
           <li><strong>Accessible Alpine Lakes:</strong> Home to some of the highest and most scenic alpine lakes in South Asia.</li>
-          <li><strong>Adventure & Sports:</strong> Opportunities for river rafting in the Kunhar River, jeep trekking to Siri Paye, and ziplining.</li>
+          <li><strong>Adventure & Sports:</strong> Opportunities for river rafting in the Kunhar River, jeep trekking to Siri Paye, and horse riding.</li>
         </ul>
 
-        {/* Spot 1: Siri Paye */}
+        {/* Spot 1: Siri Paye Meadows */}
         <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">1. Shogran & Siri Paye Meadows</h2>
           <p className="text-gray-700 mb-4">
@@ -58,7 +58,7 @@ export default function NaranGuide() {
           </p>
           <div className="rounded-xl overflow-hidden shadow-md my-4">
             <img
-              src="/guides/siri-paye.jpg"
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
               alt="Siri Paye Meadows Shogran"
               className="w-full h-72 md:h-[400px] object-cover"
             />
@@ -131,19 +131,7 @@ export default function NaranGuide() {
           </div>
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">
-          Best Time to Visit & Weather Tips
-        </h2>
-        <p>
-          The official tourism season in Naran lasts from <strong>May to October</strong>:
-        </p>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700">
-          <li><strong>May – June:</strong> Heavy snow walls on sides of Babusar road, ideal for snow lovers.</li>
-          <li><strong>July – August:</strong> Peak monsoon season with lush green meadows and roaring rivers.</li>
-          <li><strong>September – October:</strong> Pleasant cold weather, clear skies, and fewer tourist crowds.</li>
-        </ul>
-
-        {/* High Converting WhatsApp Booking Box */}
+        {/* WhatsApp Booking Card */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 md:p-10 rounded-2xl my-12 shadow-xl text-center md:text-left">
           <h3 className="text-2xl md:text-3xl font-bold mb-3">
             Book Your Naran Tour Package with Royal Route
