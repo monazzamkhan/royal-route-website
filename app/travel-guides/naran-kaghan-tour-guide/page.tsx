@@ -9,7 +9,7 @@ export default function NaranGuide() {
           Complete Travel Guide & Itinerary
         </span>
         <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mt-4 mb-4 leading-tight">
-          Ultimate Naran Kaghan Travel Guide: Best Places, Road Route & 3-Day Itinerary
+          Naran Kaghan Travel Guide: Best Places, Road Route & 3-Day Itinerary
         </h1>
         <p className="text-gray-500 text-sm">
           Published by Royal Route Travel & Tours | Complete Sightseeing Guide
