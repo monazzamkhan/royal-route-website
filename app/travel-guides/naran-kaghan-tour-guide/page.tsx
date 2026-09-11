@@ -16,7 +16,7 @@ export default function NaranGuide() {
         </p>
       </div>
 
-      {/* Main Cover Banner - Real Lake Saif-ul-Muluk */}
+      {/* Main Cover Banner - Lake Saif-ul-Muluk */}
       <div className="rounded-2xl overflow-hidden mb-10 shadow-lg border border-gray-100">
         <img
           src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1200&auto=format&fit=crop"
@@ -86,11 +86,29 @@ export default function NaranGuide() {
           </p>
         </div>
 
-        {/* Spot 3: Babusar Top */}
+        {/* Spot 3: Lulusar Lake */}
         <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">3. Lulusar Lake & Babusar Top Pass</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">3. Lulusar Lake</h2>
           <p className="text-gray-700 mb-4">
-            Driving further north from Naran towards Gilgit, you will encounter <strong>Lulusar Lake</strong>, the primary source of the Kunhar River. Its mirror-like blue reflection surrounded by snow-capped mountains is a photographer's dream.
+            Located about 48 km from Naran, <strong>Lulusar Lake</strong> is the largest natural lake in the Kaghan Valley and serves as the main source of the Kunhar River. Its clear, blue waters reflect the surrounding snow-clad mountain peaks like a giant mirror.
+          </p>
+          <div className="rounded-xl overflow-hidden shadow-md my-4">
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop"
+              alt="Lulusar Lake Naran Kaghan"
+              className="w-full h-72 md:h-[400px] object-cover"
+            />
+          </div>
+          <p className="text-gray-700">
+            <strong>Key Feature:</strong> Perfect stopover on the way to Babusar Top for sightseeing, photography, and relaxing by the shoreline.
+          </p>
+        </div>
+
+        {/* Spot 4: Babusar Top */}
+        <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">4. Babusar Top (Pass)</h2>
+          <p className="text-gray-700 mb-4">
+            Situated at a high elevation of <strong>13,690 feet (4,173 meters)</strong>, Babusar Pass is the highest viewpoint in Kaghan Valley. It connects Khyber Pakhtunkhwa to Gilgit-Baltistan via Chilas.
           </p>
           <div className="rounded-xl overflow-hidden shadow-md my-4">
             <img
@@ -100,7 +118,7 @@ export default function NaranGuide() {
             />
           </div>
           <p className="text-gray-700">
-            Continuing up the winding mountain road leads to <strong>Babusar Top (13,690 ft)</strong>, the highest point of the Kaghan Valley. On clear days, it offers panoramic vistas connecting Kaghan Valley to Chilas and the Karakoram Highway.
+            <strong>Highlights:</strong> Incredible panoramic mountain views, cool freezing breezes even in summer, and iconic hot tea/pakora stalls along the pass.
           </p>
         </div>
 
@@ -144,13 +162,13 @@ export default function NaranGuide() {
               href="https://wa.me/923074326061"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto text-center bg-green-500 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-green-600 transition shadow-lg text-lg"
+              className="inline-block bg-green-500 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-green-600 transition shadow-lg text-lg"
             >
               Book via WhatsApp (0307-4326061)
             </a>
             <Link
               href="/packages"
-              className="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-3.5 rounded-xl transition"
+              className="inline-block bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-3.5 rounded-xl transition"
             >
               View All Tour Packages
             </Link>
