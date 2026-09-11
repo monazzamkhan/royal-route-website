@@ -12,15 +12,15 @@ export default function NaranGuide() {
           Ultimate Naran Kaghan Travel Guide: Best Places, Road Route & 3-Day Itinerary
         </h1>
         <p className="text-gray-500 text-sm">
-          Published by Royal Route Travel & Tours | Updated Season Guide
+          Published by Royal Route Travel & Tours | Complete Sightseeing Guide
         </p>
       </div>
 
-      {/* Main Cover Banner - Lake Saif-ul-Muluk */}
+      {/* Main Cover Banner - Siri Paye */}
       <div className="rounded-2xl overflow-hidden mb-10 shadow-lg border border-gray-100">
         <img
-          src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1200&auto=format&fit=crop"
-          alt="Lake Saif ul Muluk Naran Kaghan"
+          src="/guides/naran/siri-paye.png"
+          alt="Naran Kaghan Valley Tourism"
           className="w-full h-[350px] md:h-[480px] object-cover"
         />
       </div>
@@ -39,16 +39,8 @@ export default function NaranGuide() {
         <hr className="my-8 border-gray-200" />
 
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">
-          Why Visit Naran Kaghan Valley?
+          Top Places & Key Attractions to Visit
         </h2>
-        <p>
-          The allure of Naran lies in its unique geographic diversity. From the historic legendary charm of Lake Saif-ul-Muluk to the high-altitude mountain pass of Babusar Top, every kilometer traveled offers breathtaking views. Key highlights include:
-        </p>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700">
-          <li><strong>Pleasant Summer Weather:</strong> Temperatures in Naran range between comfortable 10°C to 20°C during peak summer months.</li>
-          <li><strong>Accessible Alpine Lakes:</strong> Home to some of the highest and most scenic alpine lakes in South Asia.</li>
-          <li><strong>Adventure & Sports:</strong> Opportunities for river rafting in the Kunhar River, jeep trekking to Siri Paye, and horse riding.</li>
-        </ul>
 
         {/* Spot 1: Siri Paye Meadows */}
         <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
@@ -58,7 +50,7 @@ export default function NaranGuide() {
           </p>
           <div className="rounded-xl overflow-hidden shadow-md my-4">
             <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+              src="/guides/naran/siri-paye.png"
               alt="Siri Paye Meadows Shogran"
               className="w-full h-72 md:h-[400px] object-cover"
             />
@@ -68,57 +60,75 @@ export default function NaranGuide() {
           </p>
         </div>
 
-        {/* Spot 2: Saif ul Muluk */}
+        {/* Spot 2: River Rafting */}
         <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">2. Lake Saif-ul-Muluk: The Jewel of Naran</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">2. Kunhar River Rafting</h2>
           <p className="text-gray-700 mb-4">
-            Situated at 10,578 feet above sea level, Lake Saif-ul-Muluk is world-renowned for its turquoise waters and the backdrop of the mighty <strong>Malika Parbat (5,290m)</strong>. According to local folklore, a Persian prince named Saif-ul-Muluk fell in love with a fairy princess here.
+            The cold, gushing waters of the <strong>Kunhar River</strong> flow through the heart of Naran Valley, providing world-class white-water rafting experiences. Guided rafting trips with professional equipment and safety gear operate along the river banks near Balakot and Naran Bypass.
           </p>
           <div className="rounded-xl overflow-hidden shadow-md my-4">
             <img
-              src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=1200&auto=format&fit=crop"
-              alt="Lake Saif ul Muluk Naran"
+              src="/guides/naran/rafting.jpg"
+              alt="River Rafting in Kunhar River Naran"
               className="w-full h-72 md:h-[400px] object-cover"
             />
           </div>
           <p className="text-gray-700">
-            <strong>How to Reach:</strong> It takes about 30–40 minutes on a 4x4 jeep from Naran Bazaar. Boating and horse riding are popular activities along the lake shoreline.
+            <strong>Activity Highlight:</strong> Suitable for beginners and adrenaline lovers alike, offering scenic views of pine trees and mountains while riding the rapids.
           </p>
         </div>
 
-        {/* Spot 3: Lulusar Lake */}
+        {/* Spot 3: Lalazar Plateau */}
         <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">3. Lulusar Lake</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">3. Lalazar Meadows & Plateau</h2>
           <p className="text-gray-700 mb-4">
-            Located about 48 km from Naran, <strong>Lulusar Lake</strong> is the largest natural lake in the Kaghan Valley and serves as the main source of the Kunhar River. Its clear, blue waters reflect the surrounding snow-clad mountain peaks like a giant mirror.
+            Perched at an altitude of 10,490 feet, <strong>Lalazar</strong> is famous for its dense pine pine forests, wildflower fields, and serene atmosphere. Accessible via an adventurous 4x4 jeep track from Battakundi, it offers panoramic views of Falak-Sar peak and deep mountain gorges.
           </p>
           <div className="rounded-xl overflow-hidden shadow-md my-4">
             <img
-              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop"
-              alt="Lulusar Lake Naran Kaghan"
+              src="/guides/naran/Lalazar.jpg"
+              alt="Lalazar Plateau Naran Kaghan"
               className="w-full h-72 md:h-[400px] object-cover"
             />
           </div>
           <p className="text-gray-700">
-            <strong>Key Feature:</strong> Perfect stopover on the way to Babusar Top for sightseeing, photography, and relaxing by the shoreline.
+            <strong>Pro Tip:</strong> Perfect spot for nature walks, camping, and escape from main city crowds.
           </p>
         </div>
 
-        {/* Spot 4: Babusar Top */}
+        {/* Spot 4: Lulusar Lake */}
         <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">4. Babusar Top (Pass)</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">4. Lulusar Lake</h2>
+          <p className="text-gray-700 mb-4">
+            Located about 48 km from Naran, <strong>Lulusar Lake</strong> is the largest natural lake in Kaghan Valley and the primary source of the Kunhar River. Its crystal-clear, deep blue waters reflect snow-clad mountain peaks like a giant natural mirror.
+          </p>
+          <div className="rounded-xl overflow-hidden shadow-md my-4">
+            <img
+              src="/guides/naran/lulusar.jpg"
+              alt="Lulusar Lake Kaghan Valley"
+              className="w-full h-72 md:h-[400px] object-cover"
+            />
+          </div>
+          <p className="text-gray-700">
+            <strong>Key Feature:</strong> Located directly along the Naran-Babusar road, making it an extremely accessible stopover for breathtaking photography.
+          </p>
+        </div>
+
+        {/* Spot 5: Babusar Top */}
+        <div className="my-10 bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">5. Babusar Top (Pass)</h2>
           <p className="text-gray-700 mb-4">
             Situated at a high elevation of <strong>13,690 feet (4,173 meters)</strong>, Babusar Pass is the highest viewpoint in Kaghan Valley. It connects Khyber Pakhtunkhwa to Gilgit-Baltistan via Chilas.
           </p>
           <div className="rounded-xl overflow-hidden shadow-md my-4">
             <img
-              src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop"
-              alt="Babusar Top Pass Naran Kaghan"
+              src="/guides/naran/Babusar.jpg"
+              alt="Babusar Top Mountain Pass"
               className="w-full h-72 md:h-[400px] object-cover"
             />
           </div>
           <p className="text-gray-700">
-            <strong>Highlights:</strong> Incredible panoramic mountain views, cool freezing breezes even in summer, and iconic hot tea/pakora stalls along the pass.
+            <strong>Highlights:</strong> Panoramic views above clouds, freezing winds even during summer, and local tea stalls at the summit.
           </p>
         </div>
 
@@ -128,23 +138,23 @@ export default function NaranGuide() {
 
         <div className="space-y-4">
           <div className="border-l-4 border-blue-600 pl-4 py-2 bg-blue-50/50 rounded-r-lg">
-            <h3 className="font-bold text-lg text-gray-900">Day 1: Departure & Travel to Naran via Shogran</h3>
+            <h3 className="font-bold text-lg text-gray-900">Day 1: Travel to Naran, Rafting & Shogran</h3>
             <p className="text-gray-700 text-sm">
-              Early morning departure from Lahore/Islamabad via Hazara Motorway (M-15). Stop at Balakot for river views, then head up to Shogran for a 4x4 jeep trip to Siri Paye Meadows. Drive to Naran main bazaar for evening check-in and hotel stay.
+              Early morning departure from Lahore/Islamabad via Hazara Motorway (M-15). Stop at Balakot for river rafting in Kunhar River, visit Shogran & Siri Paye Meadows via 4x4 jeep, and arrive at Naran Bazaar for overnight hotel stay.
             </p>
           </div>
 
           <div className="border-l-4 border-blue-600 pl-4 py-2 bg-blue-50/50 rounded-r-lg">
-            <h3 className="font-bold text-lg text-gray-900">Day 2: Lake Saif-ul-Muluk & Local Sightseeing</h3>
+            <h3 className="font-bold text-lg text-gray-900">Day 2: Lake Saif-ul-Muluk & Lalazar Plateau</h3>
             <p className="text-gray-700 text-sm">
-              Morning jeep safari to Lake Saif-ul-Muluk. Spend 3-4 hours exploring the lake and boating. Afternoon return to Naran for rafting in the Kunhar River and shopping at Naran Bazaar for local handicrafts, dry fruits, and trout fish dinners.
+              Morning jeep trip to Lake Saif-ul-Muluk for boating. Afternoon excursion to Lalazar Plateau via Battakundi. Evening walk at Naran Bazaar with local trout fish dinner.
             </p>
           </div>
 
           <div className="border-l-4 border-blue-600 pl-4 py-2 bg-blue-50/50 rounded-r-lg">
-            <h3 className="font-bold text-lg text-gray-900">Day 3: Lulusar Lake, Babusar Top & Return Journey</h3>
+            <h3 className="font-bold text-lg text-gray-900">Day 3: Lulusar Lake, Babusar Top & Return</h3>
             <p className="text-gray-700 text-sm">
-              Early drive to Lulusar Lake and Babusar Top for sightseeing and mountain tea. Enjoy the descent back through Kaghan Valley and return safely to Islamabad/Lahore by midnight.
+              Drive up to Lulusar Lake and Babusar Top for sightseeing. Begin return journey through Kaghan Valley back to Islamabad/Lahore by night.
             </p>
           </div>
         </div>
@@ -155,7 +165,7 @@ export default function NaranGuide() {
             Book Your Naran Tour Package with Royal Route
           </h3>
           <p className="text-blue-100 text-base md:text-lg mb-6 leading-relaxed">
-            Hassle-free family and group tour packages from Lahore & Islamabad. Package includes executive Toyota Coaster / Grand Cabin transport, premium hotel stay, 4x4 jeep transfers, and daily meals.
+            Hassle-free family and group tour packages from Lahore & Islamabad. Package includes executive transport, hotel stay, 4x4 jeep transfers, and expert tour guidance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
             <a
