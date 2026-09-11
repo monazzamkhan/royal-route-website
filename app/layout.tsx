@@ -34,22 +34,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'QIg97dPgb6eR4muK0l2fzmm-D-py9ZnAmGM5kEC-7c8', // Search Console verification tag
   },
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+ icons: {
+  icon: '/logo.png',
+  apple: '/logo.png',
+},
   },
 }
 export const viewport: Viewport = {
