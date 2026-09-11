@@ -4,7 +4,7 @@ export default function TravelGuidesPage() {
   const posts = [
     {
       slug: 'naran-kaghan-tour-guide',
-      title: 'Ultimate Naran Kaghan Travel Guide',
+      title: 'Naran Kaghan Travel Guide',
       excerpt: 'Discover Saif-ul-Muluk, Babusar Top, and key attractions in Naran Kaghan Valley.',
       date: '2026-09-10',
       image: '/guides/naran/siri-paye.png',
