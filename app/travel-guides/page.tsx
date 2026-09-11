@@ -7,7 +7,7 @@ export default function TravelGuidesPage() {
       title: 'Ultimate Naran Kaghan Travel Guide',
       excerpt: 'Discover Saif-ul-Muluk, Babusar Top, and key attractions in Naran Kaghan Valley.',
       date: '2026-09-10',
-      image: 'https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?q=80&w=800&auto=format&fit=crop',
+      image: '/guides/naran/siri-paye.png',
     },
     {
       slug: 'swat-kalam-tour-guide',
