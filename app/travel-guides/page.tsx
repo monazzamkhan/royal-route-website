@@ -14,7 +14,7 @@ export default function TravelGuidesPage() {
       title: 'Top Places to Visit in Swat & Kalam',
       excerpt: 'Explore Mahodand Lake, Ushu Forest, and Malam Jabba with our complete itinerary.',
       date: '2026-09-10',
-      image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop',
+     image: '/guides/swat/swat-kalam.png',
     },
   ]
 
