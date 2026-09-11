@@ -23,6 +23,13 @@ export default function TravelGuidesPage() {
       date: '2026-09-10',
      image: '/guides/swat/swat-kalam.png',
     },
+    {
+  slug: 'hunza-valley-tour-guide',
+  title: 'Hunza Valley Travel Guide: Best Places & Karakoram Highway Route',
+  excerpt: 'Explore Hunza Valley, Attabad Lake, Passu Cones, Khunjerab Pass (China Border), and Hussaini Bridge with Royal Route Travel & Tours.',
+  date: '2026-09-11',
+  image: '/guides/hunza/Hunza.jpg',
+},
   ]
 
   return (
