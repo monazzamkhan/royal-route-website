@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'QIg97dPgb6eR4muK0l2fzmm-D-py9ZnAmGM5kEC-7c8', // Search Console verification tag
   },
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
-  },
+ icons: {
+  icon: '/images/logo.png',
+  apple: '/images/logo.png',
+},
 }
 
 export const viewport: Viewport = {
