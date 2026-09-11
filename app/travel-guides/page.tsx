@@ -10,6 +10,13 @@ export default function TravelGuidesPage() {
       image: '/guides/naran/siri-paye.png',
     },
     {
+  slug: 'kashmir-tour-guide',
+  title: 'Azad Kashmir Travel Guide',
+  excerpt: 'Explore Neelum Valley, Arang Kel, Ratti Gali Lake, and key attractions in Azad Kashmir.',
+  date: '2026-09-11',
+  image: '/guides/kashmir/Neelam Valley.jpg',
+},
+    {
       slug: 'swat-kalam-tour-guide',
       title: 'Top Places to Visit in Swat & Kalam',
       excerpt: 'Explore Mahodand Lake, Ushu Forest, and Malam Jabba with our complete itinerary.',
