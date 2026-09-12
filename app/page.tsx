@@ -98,7 +98,7 @@ export default function HomePage() {
             {site.tagline}
           </span>
           <h1 className="mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] text-white text-balance sm:text-5xl lg:text-6xl">
-            Explore Pakistan & Sacred Journeys with Royal Route
+            Explore Pakistan &amp; Sacred Journeys with Royal Route
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
             Curated adventures to Kashmir, Naran Kaghan, Hunza, Skardu as well as Sacred Umrah Packages.
@@ -245,7 +245,7 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/umrah-packages"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-7 py-3.5 text-xs shadow-lg transition-all"
+              className="inline-flex items-center gap-2 rounded-xl bg-gold hover:bg-yellow-400 text-slate-950 font-bold px-8 py-4 text-sm shadow-xl transition-all hover:scale-105"
             >
               Explore All Umrah Packages (15, 21 &amp; 28 Days) <ArrowRight className="size-4" />
             </Link>
