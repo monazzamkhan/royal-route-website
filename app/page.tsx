@@ -8,6 +8,8 @@ import {
   ArrowRight,
   Phone,
   Sparkles,
+  Moon,
+  CheckCircle2,
 } from 'lucide-react'
 import { packages } from '@/lib/packages'
 import { site, whatsappLink } from '@/lib/site'
@@ -39,6 +41,39 @@ const reasons = [
   },
 ]
 
+const featuredUmrah = [
+  {
+    slug: 'executive-5-star-umrah-package',
+    title: 'Executive 5-Star Umrah',
+    badge: 'VIP Executive',
+    price: 'Starting Rs. 385,000',
+    duration: 'Customizable (7, 10, 15, 21 Days)',
+    makkah: '5-Star Clock Tower / Front Line',
+    madinah: '5-Star Northern Courtyard',
+    image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop',
+  },
+  {
+    slug: 'economy-umrah-package',
+    title: '15 Days Economy Umrah',
+    badge: 'Hotels Promo',
+    price: 'Starting Rs. 66,000',
+    duration: '15 Days (Land Package)',
+    makkah: 'Bait Al-Hajeej 2 / Similar',
+    madinah: 'Jood Al-Marjan / Similar',
+    image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop',
+  },
+  {
+    slug: 'economy-21-days-umrah-package',
+    title: '21 Days Saudia Direct',
+    badge: 'Saudia Direct',
+    price: 'Starting Rs. 232,000',
+    duration: '21 Days (Fixed Group Flight)',
+    makkah: '12 Nights Makkah Stay',
+    madinah: '8 Nights Madinah Stay',
+    image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
+  },
+]
+
 export default function HomePage() {
   // Includes 3-Day packages plus 5-Day Hunza package
   const featuredPackages = packages.filter(
@@ -66,9 +101,8 @@ export default function HomePage() {
             Explore Pakistan with Royal Route Travel &amp; Tours
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
-            Curated adventures to Kashmir, Naran Kaghan, Hunza and Skardu.
-            Luxury transport, expert guides and unforgettable memories — booked
-            in minutes.
+            Curated adventures to Kashmir, Naran Kaghan, Hunza and Skardu as well as Sacred Umrah Packages.
+            Luxury transport, expert guides and unforgettable memories — booked in minutes.
           </p>
 
           <div className="mt-8 max-w-2xl">
@@ -84,7 +118,7 @@ export default function HomePage() {
               <ArrowRight className="size-4" />
             </Link>
             <a
-              href={whatsappLink('Hello Royal Route Travel & Tours! I would like to plan a trip.')}
+              href={whatsappLink('Hello Royal Route Travel & Tours! I would like to plan a trip / inquiry.')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
@@ -96,7 +130,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Packages Section */}
+      {/* Featured Packages Section (Domestic Tours) */}
       <section id="packages" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -138,6 +172,81 @@ export default function HomePage() {
               className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-gold px-7 py-4 text-sm font-bold text-slate-950 shadow-lg transition-all hover:bg-yellow-400 hover:scale-105"
             >
               Browse All Packages <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SACRED UMRAH PACKAGES SECTION */}
+      <section className="bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 py-20 text-white relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end mb-12">
+            <div>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-800/60 border border-emerald-500/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">
+                <Moon className="size-3 text-emerald-300" /> Sacred Pilgrimage
+              </span>
+              <h2 className="mt-2 font-display text-3xl font-extrabold text-white sm:text-4xl">
+                Umrah Packages 2026
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-emerald-100/80">
+              Complete Umrah Visa approval, direct flights (Saudia &amp; Airblue), luxury transfers, and accommodations right near Haram.
+            </p>
+          </div>
+
+          {/* Umrah Cards Grid */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredUmrah.map((u) => (
+              <div
+                key={u.slug}
+                className="flex flex-col justify-between rounded-2xl border border-emerald-700/40 bg-white text-gray-900 shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300"
+              >
+                <div>
+                  <div className="relative h-52 w-full">
+                    <img src={u.image} alt={u.title} className="w-full h-full object-cover" />
+                    <span className="absolute top-3 right-3 rounded-full bg-emerald-700 px-3 py-1 text-xs font-bold text-white shadow">
+                      {u.badge}
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-bold text-gray-900 mb-1">{u.title}</h3>
+                    <p className="text-base font-extrabold text-emerald-700 mb-4">{u.price}</p>
+
+                    <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="size-3.5 text-emerald-600 shrink-0" />
+                        <span><strong>Duration:</strong> {u.duration}</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="size-3.5 text-emerald-600 shrink-0" />
+                        <span><strong>Makkah:</strong> {u.makkah}</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="size-3.5 text-emerald-600 shrink-0" />
+                        <span><strong>Madinah:</strong> {u.madinah}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="p-6 pt-0">
+                  <Link
+                    href={`/umrah-packages/${u.slug}`}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-4 py-3 text-xs font-bold text-white transition-colors hover:bg-emerald-800 shadow-md"
+                  >
+                    View Details &amp; Inquire <ArrowRight className="size-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/umrah-packages"
+              className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-sm font-bold text-slate-950 shadow-xl transition-all hover:bg-yellow-400 hover:scale-105"
+            >
+              Explore All Umrah Packages (15, 21 &amp; 28 Days) <ArrowRight className="size-4" />
             </Link>
           </div>
         </div>
