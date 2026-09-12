@@ -7,8 +7,8 @@ export default function UmrahPackagesPage() {
       title: 'Economy Umrah Package (15 Days)',
       price: 'Starting from Rs. 235,000',
       duration: '15 Days (7 Nights Makkah / 7 Nights Madinah)',
-      hotelMakkah: '3-Star (800m walking / shuttle service)',
-      hotelMadinah: '3-Star (500m Markaziah)',
+      hotelMakkah: '3-Star (walking / shuttle service)',
+      hotelMadinah: '3-Star (walking / shuttle service)',
       image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
     },
     {
@@ -52,7 +52,7 @@ export default function UmrahPackagesPage() {
                   <li><strong>Duration:</strong> {pkg.duration}</li>
                   <li><strong>Makkah Hotel:</strong> {pkg.hotelMakkah}</li>
                   <li><strong>Madinah Hotel:</strong> {pkg.hotelMadinah}</li>
-                  <li><strong>Includes:</strong> Visa + Transport + Ziyarat</li>
+                  <li><strong>Includes:</strong> Visa + Transport </li>
                 </ul>
               </div>
             </div>
