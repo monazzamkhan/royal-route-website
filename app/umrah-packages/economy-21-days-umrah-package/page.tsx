@@ -4,95 +4,113 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { whatsappLink } from '@/lib/site'
 
-// Saudia 21 Days Packages Data from Images
+// Promo Flights (Sep-Oct)
+const promoFlightSchedules = [
+  'SV739 LHE-JED 21SEP (02:40 - 05:45) | SV734 JED-LHE 11OCT (01:55 - 08:50)',
+  'SV735 LHE-JED 21SEP (10:30 - 13:35) | SV738 JED-LHE 11OCT (18:05 - 01:00)',
+  'SV739 LHE-JED 22SEP (02:40 - 05:45) | SV734 JED-LHE 12OCT (01:55 - 08:50)',
+  'SV735 LHE-JED 22SEP (10:30 - 13:35) | SV738 JED-LHE 12OCT (18:05 - 01:00)',
+  'SV739 LHE-JED 24SEP (02:40 - 05:45) | SV734 JED-LHE 14OCT (01:55 - 08:50)',
+  'SV735 LHE-JED 24SEP (10:30 - 13:35) | SV738 JED-LHE 14OCT (18:05 - 01:00)',
+]
+
+// Regular Flights (Oct-Nov)
+const regularFlightSchedules = [
+  'SV735 LHE-JED 03OCT (10:30 - 13:35) | SV738 JED-LHE 23OCT (18:05 - 01:00)',
+  'SV739 LHE-JED 05OCT (02:40 - 05:45) | SV732 JED-LHE 24OCT (09:30 - 16:25)',
+  'SV735 LHE-JED 07OCT (10:30 - 13:35) | SV738 JED-LHE 27OCT (18:20 - 00:55)',
+  'SV739 LHE-JED 09OCT (02:40 - 05:45) | SV734 JED-LHE 29OCT (03:05 - 09:45)',
+  'SV739 LHE-JED 12OCT (02:40 - 05:45) | SV732 JED-LHE 31OCT (09:45 - 16:25)',
+  'SV735 LHE-JED 14OCT (10:30 - 13:35) | SV738 JED-LHE 03NOV (18:05 - 01:00)',
+]
+
+// Complete Packages Dataset
 const saudiaPackages = [
   {
     id: 'promo-01',
-    category: 'Promo Offer (Sep-Oct)',
+    category: 'Promo Offer',
+    dates: '21 Sep - 11 Oct',
     name: 'Package 1 - Promo Economy (Shuttle)',
     makkah: 'Bait Al-Hajeej 2 (Shuttle Service)',
     madinah: 'Jood Al-Marjan (Shuttle Service)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    type: 'promo',
     prices: { sharing: '232,000', quad: '236,000', triple: '241,000', double: '253,000' },
   },
   {
     id: 'promo-02',
-    category: 'Promo Offer (Sep-Oct)',
+    category: 'Promo Offer',
+    dates: '21 Sep - 11 Oct',
     name: 'Package 2 - Promo Standard (Hijrah Road)',
     makkah: 'Hiba Hijrah 1 (800 Mtr - Hijrah Road)',
-    madinah: 'Najoom Al-Khair Silver (550-600 Mtr - Masjid Bilal Side)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    madinah: 'Najoom Al-Khair Silver (550-600 Mtr)',
+    type: 'promo',
     prices: { sharing: '260,000', quad: '269,000', triple: '286,000', double: '321,000' },
   },
   {
     id: 'promo-03',
-    category: 'Promo Offer (Sep-Oct)',
+    category: 'Promo Offer',
+    dates: '22 Sep - 12 Oct',
     name: 'Package 3 - Promo Comfort (Manshiya Road)',
     makkah: 'Jalal Mutmaiza (600-650 Mtr - Manshiya Road)',
-    madinah: 'Najoom Al-Khair Silver (550-600 Mtr - Masjid Bilal Side)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    madinah: 'Najoom Al-Khair Silver (550-600 Mtr)',
+    type: 'promo',
     prices: { sharing: '264,000', quad: '276,000', triple: '296,000', double: '335,000' },
   },
   {
     id: 'reg-01',
-    category: 'Saudia Direct (Oct-Nov)',
+    category: 'Saudia Direct',
+    dates: '03 Oct - 23 Oct',
     name: 'Package 1 - Economy Shuttle',
     makkah: 'Bait Al-Hajeej 2 (Shuttle Service)',
     madinah: 'Jood Al-Marjan (Shuttle Service)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    type: 'regular',
     prices: { sharing: '246,000', quad: '251,000', triple: '259,000', double: '274,000' },
   },
   {
     id: 'reg-02',
-    category: 'Saudia Direct (Oct-Nov)',
+    category: 'Saudia Direct',
+    dates: '05 Oct - 24 Oct',
     name: 'Package 2 - Land Premium',
-    makkah: 'Land Premium / Similar (1100-1150 Mtr - Hijrah Road)',
+    makkah: 'Land Premium / Similar (1100-1150 Mtr)',
     madinah: 'Jood Al-Marjan (1000-1100 Mtr - Shuttle)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    type: 'regular',
     prices: { sharing: '263,000', quad: '274,000', triple: '287,000', double: '315,000' },
   },
   {
     id: 'reg-03',
-    category: 'Saudia Direct (Oct-Nov)',
+    category: 'Saudia Direct',
+    dates: '07 Oct - 27 Oct',
     name: 'Package 3 - Hiba Hijrah & Najoom Silver',
     makkah: 'Hiba Hijrah 1 (800 Mtr - Hijrah Road)',
-    madinah: 'Najoom Al-Khair Silver (550-600 Mtr - Masjid Bilal Side)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    madinah: 'Najoom Al-Khair Silver (550-600 Mtr)',
+    type: 'regular',
     prices: { sharing: '278,000', quad: '289,000', triple: '309,000', double: '350,000' },
   },
   {
     id: 'reg-04',
-    category: 'Saudia Direct (Oct-Nov)',
+    category: 'Saudia Direct',
+    dates: '09 Oct - 29 Oct',
     name: 'Package 4 - Jalal Mutmaiza & Najoom Silver',
     makkah: 'Jalal Mutmaiza (600-650 Mtr - Manshiya Road)',
-    madinah: 'Najoom Al-Khair Silver (550-600 Mtr - Masjid Bilal Side)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    madinah: 'Najoom Al-Khair Silver (550-600 Mtr)',
+    type: 'regular',
     prices: { sharing: '283,000', quad: '298,000', triple: '322,000', double: '368,000' },
   },
   {
     id: 'reg-05',
-    category: 'Saudia Direct (Oct-Nov)',
+    category: 'Saudia Direct',
+    dates: '12 Oct - 31 Oct',
     name: 'Package 5 - Executive Markazia (50 Mtr)',
     makkah: 'Mather Al-Jewar (500-550 Mtr - Hijrah Road)',
     madinah: 'Rua Al-Fakhama (50 Mtr - Markazia)',
-    nights: '12 Nights Makkah / 8 Nights Madinah',
+    type: 'regular',
     prices: { sharing: '309,000', quad: '323,000', triple: '355,000', double: '418,000' },
   },
 ]
 
-const flightSchedules = [
-  'SV739 LHE-JED 21SEP (02:40 - 05:45) | SV734 JED-LHE 11OCT (01:55 - 08:50)',
-  'SV735 LHE-JED 21SEP (10:30 - 13:35) | SV738 JED-LHE 11OCT (18:05 - 01:00)',
-  'SV739 LHE-JED 22SEP (02:40 - 05:45) | SV734 JED-LHE 12OCT (01:55 - 08:50)',
-  'SV735 LHE-JED 03OCT (10:30 - 13:35) | SV738 JED-LHE 23OCT (18:05 - 01:00)',
-  'SV739 LHE-JED 05OCT (02:40 - 05:45) | SV732 JED-LHE 24OCT (09:30 - 16:25)',
-  'SV735 LHE-JED 07OCT (10:30 - 13:35) | SV738 JED-LHE 27OCT (18:20 - 00:55)',
-  'SV739 LHE-JED 12OCT (02:40 - 05:45) | SV732 JED-LHE 31OCT (09:45 - 16:25)',
-]
-
 export default function Economy21DaysUmrahPage() {
   const [selectedPkgId, setSelectedPkgId] = useState('reg-01')
-  const [selectedFlight, setSelectedFlight] = useState(flightSchedules[0])
+  const [tableFilter, setTableFilter] = useState('all')
   const [adults, setAdults] = useState('2')
   const [child, setChild] = useState('0')
   const [infant, setInfant] = useState('0')
@@ -100,9 +118,26 @@ export default function Economy21DaysUmrahPage() {
 
   const activePkg = saudiaPackages.find((p) => p.id === selectedPkgId) || saudiaPackages[3]
 
+  // Dynamic linked flight schedules based on selected package type
+  const activeFlights = activePkg.type === 'promo' ? promoFlightSchedules : regularFlightSchedules
+  const [selectedFlight, setSelectedFlight] = useState(activeFlights[0])
+
+  const handlePackageChange = (pkgId: string) => {
+    setSelectedPkgId(pkgId)
+    const pkg = saudiaPackages.find((p) => p.id === pkgId)
+    if (pkg) {
+      const flights = pkg.type === 'promo' ? promoFlightSchedules : regularFlightSchedules
+      setSelectedFlight(flights[0])
+    }
+  }
+
+  const filteredPackages = tableFilter === 'all' 
+    ? saudiaPackages 
+    : saudiaPackages.filter((p) => p.type === tableFilter)
+
   const handleInquiry = (overridePkg?: typeof activePkg) => {
     const pkg = overridePkg || activePkg
-    const message = `Assalam-o-Alaikum Royal Route Travel & Tours!\n\nI want to inquire about *21 Days Saudia Umrah Package*.\n\n*Selected Package:* ${pkg.name} (${pkg.category})\n- Makkah Hotel: ${pkg.makkah}\n- Madinah Hotel: ${pkg.madinah}\n- Flight Schedule: ${selectedFlight}\n\n*Passenger Details:*\n- Adults: ${adults}, Child: ${child}, Infant: ${infant}\n- Room Type: ${roomType}\n\nPlease confirm availability and booking procedure.`
+    const message = `Assalam-o-Alaikum Royal Route Travel & Tours!\n\nI want to inquire about *21 Days Saudia Umrah Package*.\n\n*Selected Package:* ${pkg.name} (${pkg.category})\n- Travel Dates: ${pkg.dates}\n- Makkah Hotel: ${pkg.makkah}\n- Madinah Hotel: ${pkg.madinah}\n- Flight Schedule: ${selectedFlight}\n\n*Passenger Details:*\n- Adults: ${adults}, Child: ${child}, Infant: ${infant}\n- Room Type: ${roomType}\n\nPlease confirm seat availability and booking procedure.`
     
     window.open(whatsappLink(message), '_blank')
   }
@@ -131,7 +166,7 @@ export default function Economy21DaysUmrahPage() {
         />
       </div>
 
-      {/* Fixed Rates Info Banner for Child / Infant */}
+      {/* Child & Infant Rates Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl flex items-center justify-between">
           <div>
@@ -149,19 +184,19 @@ export default function Economy21DaysUmrahPage() {
         </div>
       </div>
 
-      {/* QUICK SELECTOR & INQUIRY SIDEBAR */}
+      {/* TOP SELECTOR & INQUIRY SIDEBAR */}
       <div className="grid lg:grid-cols-3 gap-8 mb-16">
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
             <h2 className="text-xl font-bold text-gray-900 mb-4">1. Select Package & Flight Schedule</h2>
             
-            {/* Package Selector */}
             <div className="space-y-4 mb-6">
+              {/* Package Dropdown */}
               <div>
                 <label className="block text-xs font-semibold text-gray-700 mb-1">Select Umrah Package Option</label>
                 <select
                   value={selectedPkgId}
-                  onChange={(e) => setSelectedPkgId(e.target.value)}
+                  onChange={(e) => handlePackageChange(e.target.value)}
                   className="w-full bg-emerald-50 border border-emerald-300 text-emerald-950 font-bold rounded-xl p-3.5 text-base focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 >
                   {saudiaPackages.map((pkg) => (
@@ -172,15 +207,17 @@ export default function Economy21DaysUmrahPage() {
                 </select>
               </div>
 
-              {/* Flight Departure Selector */}
+              {/* Linked Flight Schedule Dropdown */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">Select Saudia Flight Departure Date</label>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  Select Linked Saudia Flight Departure Date ({activePkg.category})
+                </label>
                 <select
                   value={selectedFlight}
                   onChange={(e) => setSelectedFlight(e.target.value)}
-                  className="w-full bg-white border border-gray-300 text-gray-900 font-medium rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full bg-white border border-emerald-500 text-gray-900 font-semibold rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 >
-                  {flightSchedules.map((flight, idx) => (
+                  {activeFlights.map((flight, idx) => (
                     <option key={idx} value={flight}>
                       {flight}
                     </option>
@@ -189,8 +226,12 @@ export default function Economy21DaysUmrahPage() {
               </div>
             </div>
 
-            {/* Active Display Card */}
+            {/* Selected Package Details */}
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 space-y-4">
+              <div className="flex justify-between items-center border-b pb-3 border-gray-200">
+                <span className="text-xs font-bold uppercase text-gray-500">Approx. Travel Dates</span>
+                <span className="text-sm font-bold text-emerald-800">{activePkg.dates}</span>
+              </div>
               <div className="flex justify-between items-center border-b pb-3 border-gray-200">
                 <span className="text-xs font-bold uppercase text-gray-500">Makkah Accommodation (12 Nights)</span>
                 <span className="text-sm font-semibold text-gray-900 text-right">{activePkg.makkah}</span>
@@ -200,8 +241,8 @@ export default function Economy21DaysUmrahPage() {
                 <span className="text-sm font-semibold text-gray-900 text-right">{activePkg.madinah}</span>
               </div>
 
-              {/* Price Rates Display */}
-              <h3 className="text-sm font-bold text-gray-900 mt-4 mb-2">Selected Package Price (PKR / Person):</h3>
+              {/* Price Table */}
+              <h3 className="text-sm font-bold text-gray-900 mt-4 mb-2">Package Price (PKR / Person):</h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
                 <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
                   <span className="block text-xs text-gray-500 font-semibold">Sharing</span>
@@ -300,22 +341,60 @@ export default function Economy21DaysUmrahPage() {
 
       <hr className="my-12 border-gray-200" />
 
-      {/* FULL SAUDIA PACKAGES TABLE */}
+      {/* FULL PACKAGES TABLE WITH FILTER BUTTONS */}
       <div>
-        <div className="mb-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
-            Saudia Airlines 21 Days Complete Packages & Rate Chart
-          </h2>
-          <p className="text-gray-600 text-sm mt-1">
-            Compare all packages and distances below. Click on any row to send a direct WhatsApp booking inquiry.
-          </p>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+              Saudia Airlines 21 Days Complete Packages Chart
+            </h2>
+            <p className="text-gray-600 text-sm mt-1">
+              Filter packages by category or click on any row to send a WhatsApp inquiry.
+            </p>
+          </div>
+
+          {/* Interactive Category Filter Buttons */}
+          <div className="flex gap-2 bg-gray-100 p-1 rounded-xl border border-gray-200">
+            <button
+              onClick={() => setTableFilter('all')}
+              className={`px-4 py-2 text-xs font-bold rounded-lg transition ${
+                tableFilter === 'all'
+                  ? 'bg-emerald-700 text-white shadow'
+                  : 'text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              All Packages
+            </button>
+            <button
+              onClick={() => setTableFilter('promo')}
+              className={`px-4 py-2 text-xs font-bold rounded-lg transition ${
+                tableFilter === 'promo'
+                  ? 'bg-emerald-700 text-white shadow'
+                  : 'text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Promo Offers
+            </button>
+            <button
+              onClick={() => setTableFilter('regular')}
+              className={`px-4 py-2 text-xs font-bold rounded-lg transition ${
+                tableFilter === 'regular'
+                  ? 'bg-emerald-700 text-white shadow'
+                  : 'text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Saudia Direct (Oct-Nov)
+            </button>
+          </div>
         </div>
 
+        {/* Responsive Table */}
         <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
           <table className="w-full text-left text-sm text-gray-700">
             <thead className="bg-emerald-800 text-white text-xs uppercase tracking-wider">
               <tr>
                 <th className="p-4">Category</th>
+                <th className="p-4">Travel Dates</th>
                 <th className="p-4">Package Name</th>
                 <th className="p-4">Makkah Hotel (12 Nights)</th>
                 <th className="p-4">Madinah Hotel (8 Nights)</th>
@@ -327,9 +406,10 @@ export default function Economy21DaysUmrahPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
-              {saudiaPackages.map((pkg) => (
+              {filteredPackages.map((pkg) => (
                 <tr key={pkg.id} className="hover:bg-emerald-50/50 transition">
-                  <td className="p-4 font-bold text-emerald-800 text-xs">{pkg.category}</td>
+                  <td className="p-4 font-bold text-emerald-800 text-xs whitespace-nowrap">{pkg.category}</td>
+                  <td className="p-4 font-bold text-gray-900 text-xs whitespace-nowrap">{pkg.dates}</td>
                   <td className="p-4 font-semibold text-gray-900">{pkg.name}</td>
                   <td className="p-4 text-gray-800">{pkg.makkah}</td>
                   <td className="p-4 text-gray-800">{pkg.madinah}</td>
@@ -340,7 +420,7 @@ export default function Economy21DaysUmrahPage() {
                   <td className="p-4 text-center whitespace-nowrap">
                     <button
                       onClick={() => {
-                        setSelectedPkgId(pkg.id)
+                        handlePackageChange(pkg.id)
                         handleInquiry(pkg)
                       }}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2 px-3 rounded-lg shadow transition"
