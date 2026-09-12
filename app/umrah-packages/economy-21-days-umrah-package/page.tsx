@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { whatsappLink } from '@/lib/site'
 
@@ -110,11 +110,16 @@ const saudiaPackages = [
 
 export default function Economy21DaysUmrahPage() {
   const [selectedPkgId, setSelectedPkgId] = useState('reg-01')
-  const [tableFilter, setTableFilter] = useState('all')
   const [adults, setAdults] = useState('2')
   const [child, setChild] = useState('0')
   const [infant, setInfant] = useState('0')
   const [roomType, setRoomType] = useState('Quad Sharing')
+
+  // Excel-Style Header Filters State
+  const [filterCategory, setFilterCategory] = useState('ALL')
+  const [filterDate, setFilterDate] = useState('ALL')
+  const [filterMakkah, setFilterMakkah] = useState('ALL')
+  const [filterMadinah, setFilterMadinah] = useState('ALL')
 
   const activePkg = saudiaPackages.find((p) => p.id === selectedPkgId) || saudiaPackages[3]
 
@@ -131,9 +136,31 @@ export default function Economy21DaysUmrahPage() {
     }
   }
 
-  const filteredPackages = tableFilter === 'all' 
-    ? saudiaPackages 
-    : saudiaPackages.filter((p) => p.type === tableFilter)
+  // Unique options for header dropdown filters
+  const uniqueCategories = useMemo(() => Array.from(new Set(saudiaPackages.map((p) => p.category))), [])
+  const uniqueDates = useMemo(() => Array.from(new Set(saudiaPackages.map((p) => p.dates))), [])
+  const uniqueMakkahHotels = useMemo(() => Array.from(new Set(saudiaPackages.map((p) => p.makkah))), [])
+  const uniqueMadinahHotels = useMemo(() => Array.from(new Set(saudiaPackages.map((p) => p.madinah))), [])
+
+  // Filtered dataset for Excel Table
+  const filteredPackages = useMemo(() => {
+    return saudiaPackages.filter((pkg) => {
+      const matchCategory = filterCategory === 'ALL' || pkg.category === filterCategory
+      const matchDate = filterDate === 'ALL' || pkg.dates === filterDate
+      const matchMakkah = filterMakkah === 'ALL' || pkg.makkah === filterMakkah
+      const matchMadinah = filterMadinah === 'ALL' || pkg.madinah === filterMadinah
+      return matchCategory && matchDate && matchMakkah && matchMadinah
+    })
+  }, [filterCategory, filterDate, filterMakkah, filterMadinah])
+
+  const hasActiveFilters = filterCategory !== 'ALL' || filterDate !== 'ALL' || filterMakkah !== 'ALL' || filterMadinah !== 'ALL'
+
+  const resetFilters = () => {
+    setFilterCategory('ALL')
+    setFilterDate('ALL')
+    setFilterMakkah('ALL')
+    setFilterMadinah('ALL')
+  }
 
   const handleInquiry = (overridePkg?: typeof activePkg) => {
     const pkg = overridePkg || activePkg
@@ -341,95 +368,146 @@ export default function Economy21DaysUmrahPage() {
 
       <hr className="my-12 border-gray-200" />
 
-      {/* FULL PACKAGES TABLE WITH FILTER BUTTONS */}
+      {/* EXCEL-STYLE TABLE WITH HEADER DROPDOWN FILTERS */}
       <div>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
           <div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
-              Saudia Airlines 21 Days Complete Packages Chart
+              Saudia Airlines 21 Days Complete Rate Chart
             </h2>
             <p className="text-gray-600 text-sm mt-1">
-              Filter packages by category or click on any row to send a WhatsApp inquiry.
+              Use the Excel header dropdown filters below to quickly filter by Date, Hotel, or Category.
             </p>
           </div>
 
-          {/* Interactive Category Filter Buttons */}
-          <div className="flex gap-2 bg-gray-100 p-1 rounded-xl border border-gray-200">
+          {hasActiveFilters && (
             <button
-              onClick={() => setTableFilter('all')}
-              className={`px-4 py-2 text-xs font-bold rounded-lg transition ${
-                tableFilter === 'all'
-                  ? 'bg-emerald-700 text-white shadow'
-                  : 'text-gray-700 hover:bg-gray-200'
-              }`}
+              onClick={resetFilters}
+              className="bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs py-2 px-4 rounded-xl shadow transition"
             >
-              All Packages
+              Reset Header Filters ✕
             </button>
-            <button
-              onClick={() => setTableFilter('promo')}
-              className={`px-4 py-2 text-xs font-bold rounded-lg transition ${
-                tableFilter === 'promo'
-                  ? 'bg-emerald-700 text-white shadow'
-                  : 'text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              Promo Offers
-            </button>
-            <button
-              onClick={() => setTableFilter('regular')}
-              className={`px-4 py-2 text-xs font-bold rounded-lg transition ${
-                tableFilter === 'regular'
-                  ? 'bg-emerald-700 text-white shadow'
-                  : 'text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              Saudia Direct (Oct-Nov)
-            </button>
-          </div>
+          )}
         </div>
 
-        {/* Responsive Table */}
+        {/* Excel Interactive Table */}
         <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
           <table className="w-full text-left text-sm text-gray-700">
             <thead className="bg-emerald-800 text-white text-xs uppercase tracking-wider">
               <tr>
-                <th className="p-4">Category</th>
-                <th className="p-4">Travel Dates</th>
-                <th className="p-4">Package Name</th>
-                <th className="p-4">Makkah Hotel (12 Nights)</th>
-                <th className="p-4">Madinah Hotel (8 Nights)</th>
-                <th className="p-4 text-center">Sharing</th>
-                <th className="p-4 text-center">Quad</th>
-                <th className="p-4 text-center">Triple</th>
-                <th className="p-4 text-center">Double</th>
-                <th className="p-4 text-center">Action</th>
+                {/* Excel Filter: Category */}
+                <th className="p-3">
+                  <div className="flex flex-col gap-1">
+                    <span>Category</span>
+                    <select
+                      value={filterCategory}
+                      onChange={(e) => setFilterCategory(e.target.value)}
+                      className="bg-emerald-950 text-white border border-emerald-600 rounded p-1 text-[11px] font-normal focus:outline-none"
+                    >
+                      <option value="ALL">All Categories</option>
+                      {uniqueCategories.map((c) => (
+                        <option key={c} value={c}>{c}</option>
+                      ))}
+                    </select>
+                  </div>
+                </th>
+
+                {/* Excel Filter: Travel Dates */}
+                <th className="p-3">
+                  <div className="flex flex-col gap-1">
+                    <span>Travel Dates</span>
+                    <select
+                      value={filterDate}
+                      onChange={(e) => setFilterDate(e.target.value)}
+                      className="bg-emerald-950 text-white border border-emerald-600 rounded p-1 text-[11px] font-normal focus:outline-none"
+                    >
+                      <option value="ALL">All Dates</option>
+                      {uniqueDates.map((d) => (
+                        <option key={d} value={d}>{d}</option>
+                      ))}
+                    </select>
+                  </div>
+                </th>
+
+                <th className="p-3 align-top pt-4">Package Name</th>
+
+                {/* Excel Filter: Makkah Hotel */}
+                <th className="p-3">
+                  <div className="flex flex-col gap-1">
+                    <span>Makkah Hotel (12N)</span>
+                    <select
+                      value={filterMakkah}
+                      onChange={(e) => setFilterMakkah(e.target.value)}
+                      className="bg-emerald-950 text-white border border-emerald-600 rounded p-1 text-[11px] font-normal focus:outline-none max-w-[150px]"
+                    >
+                      <option value="ALL">All Makkah Hotels</option>
+                      {uniqueMakkahHotels.map((h) => (
+                        <option key={h} value={h}>{h.split(' (')[0]}</option>
+                      ))}
+                    </select>
+                  </div>
+                </th>
+
+                {/* Excel Filter: Madinah Hotel */}
+                <th className="p-3">
+                  <div className="flex flex-col gap-1">
+                    <span>Madinah Hotel (8N)</span>
+                    <select
+                      value={filterMadinah}
+                      onChange={(e) => setFilterMadinah(e.target.value)}
+                      className="bg-emerald-950 text-white border border-emerald-600 rounded p-1 text-[11px] font-normal focus:outline-none max-w-[150px]"
+                    >
+                      <option value="ALL">All Madinah Hotels</option>
+                      {uniqueMadinahHotels.map((h) => (
+                        <option key={h} value={h}>{h.split(' (')[0]}</option>
+                      ))}
+                    </select>
+                  </div>
+                </th>
+
+                <th className="p-3 text-center align-top pt-4">Sharing</th>
+                <th className="p-3 text-center align-top pt-4">Quad</th>
+                <th className="p-3 text-center align-top pt-4">Triple</th>
+                <th className="p-3 text-center align-top pt-4">Double</th>
+                <th className="p-3 text-center align-top pt-4">Action</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
-              {filteredPackages.map((pkg) => (
-                <tr key={pkg.id} className="hover:bg-emerald-50/50 transition">
-                  <td className="p-4 font-bold text-emerald-800 text-xs whitespace-nowrap">{pkg.category}</td>
-                  <td className="p-4 font-bold text-gray-900 text-xs whitespace-nowrap">{pkg.dates}</td>
-                  <td className="p-4 font-semibold text-gray-900">{pkg.name}</td>
-                  <td className="p-4 text-gray-800">{pkg.makkah}</td>
-                  <td className="p-4 text-gray-800">{pkg.madinah}</td>
-                  <td className="p-4 text-center font-bold text-gray-900">Rs. {pkg.prices.sharing}</td>
-                  <td className="p-4 text-center font-bold text-emerald-700">Rs. {pkg.prices.quad}</td>
-                  <td className="p-4 text-center font-bold text-gray-900">Rs. {pkg.prices.triple}</td>
-                  <td className="p-4 text-center font-bold text-gray-900">Rs. {pkg.prices.double}</td>
-                  <td className="p-4 text-center whitespace-nowrap">
-                    <button
-                      onClick={() => {
-                        handlePackageChange(pkg.id)
-                        handleInquiry(pkg)
-                      }}
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2 px-3 rounded-lg shadow transition"
-                    >
-                      Inquire
+              {filteredPackages.length > 0 ? (
+                filteredPackages.map((pkg) => (
+                  <tr key={pkg.id} className="hover:bg-emerald-50/50 transition">
+                    <td className="p-4 font-bold text-emerald-800 text-xs whitespace-nowrap">{pkg.category}</td>
+                    <td className="p-4 font-bold text-gray-900 text-xs whitespace-nowrap">{pkg.dates}</td>
+                    <td className="p-4 font-semibold text-gray-900">{pkg.name}</td>
+                    <td className="p-4 text-gray-800">{pkg.makkah}</td>
+                    <td className="p-4 text-gray-800">{pkg.madinah}</td>
+                    <td className="p-4 text-center font-bold text-gray-900">Rs. {pkg.prices.sharing}</td>
+                    <td className="p-4 text-center font-bold text-emerald-700">Rs. {pkg.prices.quad}</td>
+                    <td className="p-4 text-center font-bold text-gray-900">Rs. {pkg.prices.triple}</td>
+                    <td className="p-4 text-center font-bold text-gray-900">Rs. {pkg.prices.double}</td>
+                    <td className="p-4 text-center whitespace-nowrap">
+                      <button
+                        onClick={() => {
+                          handlePackageChange(pkg.id)
+                          handleInquiry(pkg)
+                        }}
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2 px-3 rounded-lg shadow transition"
+                      >
+                        Inquire
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={10} className="p-8 text-center text-gray-500">
+                    No matching packages found for selected filters.{' '}
+                    <button onClick={resetFilters} className="text-emerald-700 underline font-bold">
+                      Reset Filters
                     </button>
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>
