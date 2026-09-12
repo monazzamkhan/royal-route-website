@@ -12,6 +12,24 @@ export default function UmrahPackagesPage() {
       image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
     },
     {
+      slug: 'economy-21-days-umrah-package',
+      title: 'Economy Umrah Package (21 Days)',
+      price: 'Starting from Rs. 275,000',
+      duration: '21 Days (10 Nights Makkah / 10 Nights Madinah)',
+      hotelMakkah: '3-Star (walking / shuttle service)',
+      hotelMadinah: '3-Star (walking / shuttle service)',
+      image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      slug: 'economy-28-days-umrah-package',
+      title: 'Economy Umrah Package (28 Days / Full Month)',
+      price: 'Starting from Rs. 320,000',
+      duration: '28 Days (14 Nights Makkah / 13 Nights Madinah)',
+      hotelMakkah: '3-Star (walking / shuttle service)',
+      hotelMadinah: '3-Star (walking / shuttle service)',
+      image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop',
+    },
+    {
       slug: 'executive-5-star-umrah-package',
       title: 'Executive 5-Star Umrah Package (10 Days)',
       price: 'Starting from Rs. 385,000',
@@ -52,7 +70,7 @@ export default function UmrahPackagesPage() {
                   <li><strong>Duration:</strong> {pkg.duration}</li>
                   <li><strong>Makkah Hotel:</strong> {pkg.hotelMakkah}</li>
                   <li><strong>Madinah Hotel:</strong> {pkg.hotelMadinah}</li>
-                  <li><strong>Includes:</strong> Visa + Transport </li>
+                  <li><strong>Includes:</strong> Visa + Transport + Ziyarat</li>
                 </ul>
               </div>
             </div>
