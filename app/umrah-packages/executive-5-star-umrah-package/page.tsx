@@ -5,13 +5,14 @@ import Link from 'next/link'
 import { whatsappLink } from '@/lib/site'
 
 export default function ExecutiveUmrahPage() {
+  const [duration, setDuration] = useState('10 Days')
   const [adults, setAdults] = useState('2')
   const [child, setChild] = useState('0')
   const [infant, setInfant] = useState('0')
   const [roomType, setRoomType] = useState('Double Room')
 
   const handleInquiry = () => {
-    const message = `Assalam-o-Alaikum Royal Route Travel & Tours!\n\nI want to inquire about *10 Days Executive 5-Star Umrah Package*.\n\n*Passenger Details:*\n- Adults (12+ yrs): ${adults}\n- Child (2-11 yrs): ${child}\n- Infant (<2 yrs): ${infant}\n- Room Sharing Type: ${roomType}\n\nPlease share customized pricing and available dates.`
+    const message = `Assalam-o-Alaikum Royal Route Travel & Tours!\n\nI want to inquire about *Executive 5-Star Umrah Package*.\n\n*Package Details:*\n- Duration Selected: ${duration}\n- Adults (12+ yrs): ${adults}\n- Child (2-11 yrs): ${child}\n- Infant (<2 yrs): ${infant}\n- Room Type: ${roomType}\n\nPlease share customized VIP quotation and available dates.`
     
     window.open(whatsappLink(message), '_blank')
   }
@@ -23,16 +24,16 @@ export default function ExecutiveUmrahPage() {
           Executive 5-Star Package
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-2">
-          10 Days Executive 5-Star Umrah Package
+          Executive 5-Star Umrah Package
         </h1>
         <p className="text-2xl font-bold text-emerald-600">Starting from Rs. 385,000 / person</p>
       </div>
 
-      {/* Main Cover Photo - Verified Madinah Clock Tower / Prophet's Mosque */}
+      {/* Main Cover Photo - Verified Clock Tower / Holy Mosque */}
       <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
         <img
           src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1200&auto=format&fit=crop"
-          alt="Madinah Clock Tower 5 Star"
+          alt="Executive 5 Star Umrah Package"
           className="w-full h-80 md:h-[400px] object-cover"
         />
       </div>
@@ -43,7 +44,7 @@ export default function ExecutiveUmrahPage() {
           <div>
             <h2 className="text-2xl font-bold mb-3">Executive Package Overview</h2>
             <p className="leading-relaxed text-gray-600">
-              Designed for travelers seeking premium comfort, proximity to Haram courtyard, and luxury private transfers. Stay at top-tier 5-star hotels right at the steps of Makkah Clock Tower and Madinah Northern Courtyard.
+              Designed for travelers seeking premium comfort, proximity to Haram courtyards, and luxury private transfers. Enjoy customizable durations (7, 10, 15, or 21 Days) with stays at top-tier 5-star hotels right at the steps of Makkah Clock Tower and Madinah Northern Courtyard.
             </p>
           </div>
 
@@ -51,22 +52,37 @@ export default function ExecutiveUmrahPage() {
             <h3 className="text-xl font-bold mb-4 text-emerald-800">VIP Package Inclusions</h3>
             <ul className="list-disc pl-5 space-y-2 text-sm text-gray-700">
               <li><strong>VIP Visa Services:</strong> Priority visa approval & comprehensive medical insurance.</li>
-              <li><strong>Makkah 5-Star Hotel (5 Nights):</strong> Abraj Al Bait (Clock Tower) / Pullman Zamzam front-line facing Haram.</li>
-              <li><strong>Madinah 5-Star Hotel (5 Nights):</strong> Dar Al Taqwa / Oberoi / Frontel Madinah facing Masjid-an-Nabawi courtyard.</li>
-              <li><strong>Private Transport:</strong> Private GMC / Camry transfers (Jeddah Airport to Makkah, Madinah, Airport).</li>
+              <li><strong>Makkah 5-Star Hotel:</strong> Abraj Al Bait (Clock Tower) / Pullman Zamzam front-line facing Haram.</li>
+              <li><strong>Madinah 5-Star Hotel:</strong> Dar Al Taqwa / Oberoi / Frontel Madinah facing Masjid-an-Nabawi courtyard.</li>
+              <li><strong>Private Luxury Transport:</strong> Private GMC / Camry transfers (Jeddah Airport to Makkah, Madinah, Airport).</li>
               <li><strong>Exclusive Ziyarat:</strong> Private VIP guided tours of historical holy sites with private driver.</li>
             </ul>
           </div>
         </div>
 
-        {/* Right Column: Interactive Passenger Query Box */}
+        {/* Right Column: Interactive Query Box */}
         <div className="md:col-span-1">
           <div className="bg-emerald-50/60 border border-emerald-200 p-6 rounded-2xl shadow-md sticky top-24">
             <h3 className="text-xl font-bold text-emerald-900 mb-1">Package Inquiry</h3>
-            <p className="text-xs text-emerald-700 mb-4">Select passengers & room type to get instant quote</p>
+            <p className="text-xs text-emerald-700 mb-4">Select duration & passengers to get instant quote</p>
 
-            {/* Dropdowns */}
             <div className="space-y-4">
+              {/* Package Duration Dropdown */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Select Package Duration</label>
+                <select
+                  value={duration}
+                  onChange={(e) => setDuration(e.target.value)}
+                  className="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-sm font-semibold text-emerald-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                >
+                  <option value="7 Days Executive">7 Days VIP Package</option>
+                  <option value="10 Days Executive">10 Days VIP Package</option>
+                  <option value="15 Days Executive">15 Days VIP Package</option>
+                  <option value="21 Days Executive">21 Days VIP Package</option>
+                </select>
+              </div>
+
+              {/* Passengers Selection */}
               <div className="grid grid-cols-3 gap-2">
                 <div>
                   <label className="block text-xs font-semibold text-gray-700 mb-1">Adults</label>
@@ -108,7 +124,7 @@ export default function ExecutiveUmrahPage() {
                 </div>
               </div>
 
-              {/* Passenger Types Guide */}
+              {/* Age Criteria Box */}
               <div className="bg-white/80 p-3 rounded-lg text-xs text-gray-600 space-y-1 border border-emerald-100">
                 <p className="font-semibold text-emerald-800">Passenger Age Criteria:</p>
                 <p>• <strong>Adult:</strong> Ages 12 and up</p>
@@ -116,9 +132,9 @@ export default function ExecutiveUmrahPage() {
                 <p>• <strong>Infant:</strong> Less than 2 years</p>
               </div>
 
-              {/* Room Selection */}
+              {/* Room Preference */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">Room Preference</label>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Room / Suite Preference</label>
                 <select
                   value={roomType}
                   onChange={(e) => setRoomType(e.target.value)}
@@ -127,7 +143,7 @@ export default function ExecutiveUmrahPage() {
                   <option value="Double Room (2 Persons)">Double Room (2 Beds)</option>
                   <option value="Triple Room (3 Persons)">Triple Room (3 Beds)</option>
                   <option value="Quad Room (4 Persons)">Quad Room (4 Beds)</option>
-                  <option value="Executive Suite">Executive Suite</option>
+                  <option value="Executive Clock Tower Suite">Executive Clock Tower Suite</option>
                 </select>
               </div>
 
