@@ -28,9 +28,10 @@ export default function Economy21DaysUmrahPage() {
         <p className="text-2xl font-bold text-emerald-600">Starting from Rs. 275,000 / person</p>
       </div>
 
+      {/* Main Cover Photo - Verified Holy Kaaba Image */}
       <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
         <img
-          src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1200&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1200&auto=format&fit=crop"
           alt="Makkah Holy Kaaba"
           className="w-full h-80 md:h-[400px] object-cover"
         />
