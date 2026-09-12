@@ -4,7 +4,7 @@ export default function UmrahPackagesPage() {
   const packages = [
     {
       slug: 'executive-5-star-umrah-package',
-      title: 'Executive 5-Star Umrah Package',
+      title: 'Executive 5-Star - Umrah Package',
       price: 'Starting from Rs. 385,000',
       duration: 'Customizable Days (7, 10, 15, or 21 Days)',
       hotelMakkah: '5-Star Clock Tower / Front Line',
