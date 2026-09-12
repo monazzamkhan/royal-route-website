@@ -106,11 +106,11 @@ export default function Economy15DaysUmrahPage() {
         </p>
       </div>
 
-      {/* Main Cover Banner */}
+      {/* Main Cover Banner - Fixed Verified Kaaba Image */}
       <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
         <img
-          src="'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop'"
-          alt="15 Days Umrah Package Makkah"
+          src="https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1200&auto=format&fit=crop"
+          alt="15 Days Umrah Package Makkah Kaaba"
           className="w-full h-64 md:h-[350px] object-cover"
         />
       </div>
