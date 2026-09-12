@@ -27,7 +27,7 @@ export default function UmrahPackagesPage() {
       duration: '21 Days (10 Nights Makkah / 10 Nights Madinah)',
       hotelMakkah: '3-Star (walking / shuttle service)',
       hotelMadinah: '3-Star (walking / shuttle service)',
-      image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop',
     },
     {
       slug: 'economy-28-days-umrah-package',
@@ -36,7 +36,7 @@ export default function UmrahPackagesPage() {
       duration: '28 Days (14 Nights Makkah / 13 Nights Madinah)',
       hotelMakkah: '3-Star (walking / shuttle service)',
       hotelMadinah: '3-Star (walking / shuttle service)',
-      image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
     },
   ]
 
