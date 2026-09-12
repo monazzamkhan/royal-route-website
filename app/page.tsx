@@ -60,7 +60,7 @@ const featuredUmrah = [
     duration: '15 Days (Land Package)',
     makkah: 'Bait Al-Hajeej 2 / Similar',
     madinah: 'Jood Al-Marjan / Similar',
-    image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop',
   },
   {
     slug: 'economy-21-days-umrah-package',
@@ -98,10 +98,10 @@ export default function HomePage() {
             {site.tagline}
           </span>
           <h1 className="mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] text-white text-balance sm:text-5xl lg:text-6xl">
-            Explore Pakistan with Royal Route Travel &amp; Tours
+            Explore Pakistan & Sacred Journeys with Royal Route
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85 text-pretty">
-            Curated adventures to Kashmir, Naran Kaghan, Hunza and Skardu as well as Sacred Umrah Packages.
+            Curated adventures to Kashmir, Naran Kaghan, Hunza, Skardu as well as Sacred Umrah Packages.
             Luxury transport, expert guides and unforgettable memories — booked in minutes.
           </p>
 
@@ -131,7 +131,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Packages Section (Domestic Tours) */}
-      <section id="packages" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section id="packages" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="font-medium text-primary">Featured Tours</p>
@@ -146,51 +146,52 @@ export default function HomePage() {
         </div>
 
         {/* 4 Featured Cards Grid */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featuredPackages.map((pkg) => (
             <PackageCard key={pkg.slug} pkg={pkg} />
           ))}
         </div>
 
-        {/* High-Contrast Standout "Browse All Packages" Banner */}
-        <div className="mt-14 overflow-hidden rounded-3xl border border-gold/40 bg-slate-950 p-8 shadow-xl text-white relative">
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
-          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left relative z-10">
-            <div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
-                <Sparkles className="size-4 text-gold" /> Weekend Escapes &amp; Grand Expeditions
+        {/* Sleek, Low-Height Compact "Browse All Packages" Banner */}
+        <div className="mt-8 overflow-hidden rounded-2xl border border-emerald-900/10 bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 px-6 py-4 shadow-md text-white">
+          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+            <div className="flex items-center gap-3">
+              <span className="hidden sm:inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-amber-400/20 text-amber-400">
+                <Sparkles className="size-4" />
               </span>
-              <h3 className="mt-2 font-display text-2xl font-extrabold text-white sm:text-3xl">
-                Explore All 1-Day, 2-Day &amp; Grand Tours
-              </h3>
-              <p className="mt-2 text-sm text-slate-300 max-w-xl leading-relaxed">
-                Looking for quick 1-day hikes, weekend getaways or long holiday trips? Discover our complete collection.
-              </p>
+              <div>
+                <h3 className="font-display text-base font-bold text-white sm:text-lg">
+                  Explore All 1-Day, 2-Day &amp; Grand Tours
+                </h3>
+                <p className="text-xs text-slate-300">
+                  Looking for quick 1-day hikes or weekend getaways? Discover our complete collection.
+                </p>
+              </div>
             </div>
             <Link
               href="/packages"
-              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-gold px-7 py-4 text-sm font-bold text-slate-950 shadow-lg transition-all hover:bg-yellow-400 hover:scale-105"
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-amber-400 px-5 py-2.5 text-xs font-bold text-slate-950 shadow transition-all hover:bg-amber-500"
             >
-              Browse All Packages <ArrowRight className="size-4" />
+              Browse All Packages <ArrowRight className="size-3.5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* SACRED UMRAH PACKAGES SECTION */}
-      <section className="bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 py-20 text-white relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end mb-12">
+      {/* SACRED UMRAH PACKAGES SECTION (LIGHT & ELEGANT THEME) */}
+      <section className="py-16 bg-gradient-to-b from-amber-50/60 via-emerald-50/40 to-white border-y border-emerald-100/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end mb-10">
             <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-800/60 border border-emerald-500/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">
-                <Moon className="size-3 text-emerald-300" /> Sacred Pilgrimage
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 border border-emerald-300/60 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-800">
+                <Moon className="size-3 text-emerald-700" /> Spiritual Journeys
               </span>
-              <h2 className="mt-2 font-display text-3xl font-extrabold text-white sm:text-4xl">
+              <h2 className="mt-2 font-display text-3xl font-extrabold text-gray-900 sm:text-4xl">
                 Umrah Packages 2026
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-emerald-100/80">
-              Complete Umrah Visa approval, direct flights (Saudia &amp; Airblue), luxury transfers, and accommodations right near Haram.
+            <p className="max-w-md text-sm leading-relaxed text-gray-600">
+              Complete Umrah Visa approval, direct flight tickets (Saudia &amp; Airblue), luxury transfers, and accommodations near Haram.
             </p>
           </div>
 
@@ -199,18 +200,18 @@ export default function HomePage() {
             {featuredUmrah.map((u) => (
               <div
                 key={u.slug}
-                className="flex flex-col justify-between rounded-2xl border border-emerald-700/40 bg-white text-gray-900 shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300"
+                className="flex flex-col justify-between rounded-2xl border border-gray-200 bg-white text-gray-900 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div>
-                  <div className="relative h-52 w-full">
+                  <div className="relative h-48 w-full">
                     <img src={u.image} alt={u.title} className="w-full h-full object-cover" />
-                    <span className="absolute top-3 right-3 rounded-full bg-emerald-700 px-3 py-1 text-xs font-bold text-white shadow">
+                    <span className="absolute top-3 right-3 rounded-full bg-emerald-700 px-3 py-1 text-[10px] font-bold text-white shadow">
                       {u.badge}
                     </span>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-gray-900 mb-1">{u.title}</h3>
-                    <p className="text-base font-extrabold text-emerald-700 mb-4">{u.price}</p>
+                  <div className="p-5">
+                    <h3 className="font-display text-lg font-bold text-gray-900 mb-1">{u.title}</h3>
+                    <p className="text-sm font-extrabold text-emerald-700 mb-4">{u.price}</p>
 
                     <ul className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
                       <li className="flex items-center gap-2">
@@ -229,10 +230,10 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-6 pt-0">
+                <div className="p-5 pt-0">
                   <Link
                     href={`/umrah-packages/${u.slug}`}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-4 py-3 text-xs font-bold text-white transition-colors hover:bg-emerald-800 shadow-md"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-700 px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-emerald-800 shadow"
                   >
                     View Details &amp; Inquire <ArrowRight className="size-3.5" />
                   </Link>
@@ -241,10 +242,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <Link
               href="/umrah-packages"
-              className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-sm font-bold text-slate-950 shadow-xl transition-all hover:bg-yellow-400 hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-7 py-3.5 text-xs shadow-lg transition-all"
             >
               Explore All Umrah Packages (15, 21 &amp; 28 Days) <ArrowRight className="size-4" />
             </Link>
