@@ -5,16 +5,16 @@ export default function UmrahPackagesPage() {
     {
       slug: 'economy-umrah-package',
       title: 'Economy Umrah Package (15 Days)',
-      price: 'Rs. 235,000',
+      price: 'Starting from Rs. 235,000',
       duration: '15 Days (7 Nights Makkah / 7 Nights Madinah)',
-      hotelMakkah: '3-Star (800m with shuttle service)',
+      hotelMakkah: '3-Star (800m walking / shuttle service)',
       hotelMadinah: '3-Star (500m Markaziah)',
-      image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
     },
     {
       slug: 'executive-5-star-umrah-package',
       title: 'Executive 5-Star Umrah Package (10 Days)',
-      price: 'Rs. 385,000',
+      price: 'Starting from Rs. 385,000',
       duration: '10 Days (5 Nights Makkah / 5 Nights Madinah)',
       hotelMakkah: '5-Star Clock Tower / Front Line',
       hotelMadinah: '5-Star Northern Courtyard',
@@ -42,7 +42,7 @@ export default function UmrahPackagesPage() {
             <div>
               <div className="relative h-64 w-full">
                 <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover" />
-                <span className="absolute top-4 right-4 bg-emerald-600 text-white text-sm font-bold px-4 py-1.5 rounded-full shadow">
+                <span className="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
                   {pkg.price}
                 </span>
               </div>
