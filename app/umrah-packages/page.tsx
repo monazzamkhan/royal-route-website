@@ -2,6 +2,15 @@ import Link from 'next/link'
 
 export default function UmrahPackagesPage() {
   const packages = [
+       {
+      slug: 'executive-5-star-umrah-package',
+      title: 'Executive 5-Star Umrah Package (10 Days)',
+      price: 'Starting from Rs. 385,000',
+      duration: '10 Days (5 Nights Makkah / 5 Nights Madinah)',
+      hotelMakkah: '5-Star Clock Tower / Front Line',
+      hotelMadinah: '5-Star Northern Courtyard',
+      image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop',
+    },
     {
       slug: 'economy-umrah-package',
       title: 'Economy Umrah Package (15 Days)',
@@ -18,7 +27,7 @@ export default function UmrahPackagesPage() {
       duration: '21 Days (10 Nights Makkah / 10 Nights Madinah)',
       hotelMakkah: '3-Star (walking / shuttle service)',
       hotelMadinah: '3-Star (walking / shuttle service)',
-      image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop',
     },
     {
       slug: 'economy-28-days-umrah-package',
@@ -29,15 +38,7 @@ export default function UmrahPackagesPage() {
       hotelMadinah: '3-Star (walking / shuttle service)',
       image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
     },
-    {
-      slug: 'executive-5-star-umrah-package',
-      title: 'Executive 5-Star Umrah Package (10 Days)',
-      price: 'Starting from Rs. 385,000',
-      duration: '10 Days (5 Nights Makkah / 5 Nights Madinah)',
-      hotelMakkah: '5-Star Clock Tower / Front Line',
-      hotelMadinah: '5-Star Northern Courtyard',
-      image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop',
-    },
+
   ]
 
   return (
