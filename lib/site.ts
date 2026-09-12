@@ -30,6 +30,7 @@ export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Tour Packages', href: '/packages' },
   { label: 'Umrah Packages', href: '/umrah-packages' },
+  { href: '/umrah-hotels', label: 'Umrah Hotels' },
   { label: 'Travel Guides', href: '/travel-guides' },
   { label: 'About Us', href: '/about' },
   { label: 'Terms & Policy', href: '/terms' },
