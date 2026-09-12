@@ -28,9 +28,10 @@ export default function Economy28DaysUmrahPage() {
         <p className="text-2xl font-bold text-emerald-600">Starting from Rs. 320,000 / person</p>
       </div>
 
+      {/* Main Cover Photo - Verified Masjid-an-Nabawi Courtyard */}
       <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
         <img
-          src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=1200&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1200&auto=format&fit=crop"
           alt="Masjid an Nabawi Madinah"
           className="w-full h-80 md:h-[400px] object-cover"
         />
