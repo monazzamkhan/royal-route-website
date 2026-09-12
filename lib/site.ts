@@ -26,10 +26,28 @@ export const bankAccounts = [
 
 export const paymentMethods = ['Cards(Credit/Debit)', 'UBL Bank', 'JazzCash', 'EasyPaisa'] as const
 
+// Primary Navigation (Main Header Mein Direct Visual Links)
+export const primaryNavLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Tour Packages', href: '/packages' },
+  { label: 'Umrah Packages', href: '/umrah-packages' },
+] as const
+
+// Secondary Navigation ("More ▾" Dropdown Menu Links)
+export const secondaryNavLinks = [
+  { label: '🏢 Umrah Hotels Directory', href: '/umrah-hotels' },
+  { label: '📖 Travel Guides', href: '/travel-guides' },
+  { label: 'ℹ️ About Us', href: '/about' },
+  { label: '📞 Contact Us', href: '/contact' },
+  { label: '📜 Terms & Policy', href: '/terms' },
+] as const
+
+// Combined Navigation for Mobile Drawer Menu
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Tour Packages', href: '/packages' },
   { label: 'Umrah Packages', href: '/umrah-packages' },
+  { label: 'Umrah Hotels', href: '/umrah-hotels' },
   { label: 'Travel Guides', href: '/travel-guides' },
   { label: 'About Us', href: '/about' },
   { label: 'Terms & Policy', href: '/terms' },
