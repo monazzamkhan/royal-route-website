@@ -9,7 +9,7 @@ export default function UmrahPackagesPage() {
       duration: '15 Days (7 Nights Makkah / 7 Nights Madinah)',
       hotelMakkah: '3-Star (800m with shuttle service)',
       hotelMadinah: '3-Star (500m Markaziah)',
-      image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop',
     },
     {
       slug: 'executive-5-star-umrah-package',
