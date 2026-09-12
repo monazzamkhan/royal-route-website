@@ -50,7 +50,7 @@ const featuredUmrah = [
     duration: 'Customizable (7, 10, 15, 21 Days)',
     makkah: '5-Star Clock Tower / Front Line',
     madinah: '5-Star Northern Courtyard',
-    image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop',
   },
   {
     slug: 'economy-umrah-package',
