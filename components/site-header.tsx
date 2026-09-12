@@ -69,8 +69,8 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        {/* Desktop Navigation with Primary Links & "More" Dropdown */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        {/* Desktop Navigation Shifted to Right Side using ml-auto */}
+        <nav className="hidden items-center gap-1 ml-auto lg:flex">
           {primaryLinks.map((link) => {
             const active =
               link.href === '/'
