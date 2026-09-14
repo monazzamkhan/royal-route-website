@@ -35,15 +35,11 @@ export const primaryNavLinks = [
   { label: 'Contact Us', href: '/contact' },
 ] as const
 
-// Hotels Dropdown Links
-export const hotelDropdownLinks = [
+// "More" Dropdown Links (Including Nested Hotels & Guides)
+export const moreDropdownLinks = [
   { label: '🕋 Makkah Hotels', href: '/umrah-hotels' },
   { label: '🕌 Madinah Hotels', href: '/umrah-hotels' },
   { label: '🏨 All Hotels Directory', href: '/umrah-hotels' },
-] as const
-
-// Secondary "More" Dropdown Links
-export const moreDropdownLinks = [
   { label: '📖 Travel Guides', href: '/travel-guides' },
   { label: '📜 Terms & Policy', href: '/terms' },
 ] as const
