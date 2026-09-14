@@ -117,13 +117,20 @@ function HotelDetailContent() {
             <div className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-4">
               <h3 className="text-base font-bold text-foreground">Location & Map</h3>
               <p className="text-xs text-muted-foreground">
-                Conveniently located in {hotel.city}, offering easy access for pilgrims.
+                {hotel.locationDesc}, {hotel.city}
               </p>
-              <div className="rounded-xl overflow-hidden border border-border h-48 bg-muted flex items-center justify-center text-xs font-medium text-muted-foreground">
-                <div className="text-center p-4">
-                  <MapPin className="size-8 text-primary mx-auto mb-2" />
-                  <span>{hotel.locationDesc}</span>
-                </div>
+              {/* Real Google Maps Embed Iframe */}
+              <div className="rounded-xl overflow-hidden border border-border h-64 w-full bg-muted">
+                <iframe
+                  src={hotel.mapEmbedUrl || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0!2d39.611!3d24.467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI4JzAxLjIiTiAzOSUzNifMNS4yIkU!5e0!3m2!1sen!2spk!4v1"}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`${hotel.name} Map`}
+                />
               </div>
             </div>
           </div>
