@@ -120,12 +120,7 @@ export function SiteHeader() {
             {moreOpen && (
               <div className="absolute right-0 mt-2 w-56 rounded-xl border border-border bg-popover p-2 shadow-xl ring-1 ring-black/5 backdrop-blur z-50 space-y-1">
                 
-                {/* Section Header */}
-                <div className="px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wider text-muted-foreground">
-                  Hotels
-                </div>
-
-                {/* All Hotels Directory (Top with Submenu Arrow) */}
+                {/* Hotels Parent Item with Arrow */}
                 <div 
                   className="relative group"
                   onMouseEnter={() => setHotelsSubOpen(true)}
@@ -133,15 +128,21 @@ export function SiteHeader() {
                 >
                   <button
                     onClick={() => setHotelsSubOpen((prev) => !prev)}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-semibold text-primary hover:bg-secondary transition-colors"
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-bold text-foreground hover:bg-secondary transition-colors"
                   >
-                    <span>All Hotels Directory</span>
+                    <span>Hotels</span>
                     <ChevronRight className="size-3.5 text-muted-foreground" />
                   </button>
 
-                  {/* Nested Submenu for Makkah & Madinah */}
+                  {/* Submenu appearing on hover/click to the left */}
                   {hotelsSubOpen && (
-                    <div className="absolute right-full top-0 mr-1.5 w-44 rounded-xl border border-border bg-popover p-1.5 shadow-xl ring-1 ring-black/5 space-y-0.5 z-50">
+                    <div className="absolute right-full top-0 mr-1.5 w-52 rounded-xl border border-border bg-popover p-1.5 shadow-xl ring-1 ring-black/5 space-y-0.5 z-50">
+                      <Link
+                        href="/umrah-hotels"
+                        className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-primary hover:bg-secondary transition-colors font-bold"
+                      >
+                        All Hotels Directory
+                      </Link>
                       <Link
                         href="/umrah-hotels"
                         className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
