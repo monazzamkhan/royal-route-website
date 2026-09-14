@@ -3,20 +3,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { hotelsData, Hotel } from '@/lib/hotels'
-import { MapPin, Star, Building2, ExternalLink } from 'lucide-react'
+import { MapPin, Star, ExternalLink } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export default function UmrahHotelsPage() {
   const [selectedCity, setSelectedCity] = useState<'All' | 'Makkah' | 'Madinah'>('All')
 
-  // Group hotels by city for "All" view
   const makkahHotels = hotelsData.filter(h => h.city === 'Makkah').sort((a, b) => b.stars - a.stars)
   const madinahHotels = hotelsData.filter(h => h.city === 'Madinah').sort((a, b) => b.stars - a.stars)
   const otherHotels = hotelsData.filter(h => h.city !== 'Makkah' && h.city !== 'Madinah').sort((a, b) => b.stars - a.stars)
 
   return (
     <div className="min-h-screen bg-background pb-16">
-      {/* Page Header */}
       <div className="bg-primary/5 border-b border-border py-12 px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-3xl font-bold font-display text-foreground sm:text-4xl">
           Approved Umrah Hotels Directory
@@ -25,7 +23,6 @@ export default function UmrahHotelsPage() {
           Explore verified 5-star, 4-star, and budget-friendly accommodations in Makkah and Madinah with walking distances to the Haram and Masjid-e-Nabawi.
         </p>
 
-        {/* City Filter Tabs */}
         <div className="mt-6 flex justify-center gap-2">
           {(['All', 'Makkah', 'Madinah'] as const).map((city) => (
             <button
@@ -44,12 +41,9 @@ export default function UmrahHotelsPage() {
         </div>
       </div>
 
-      {/* Content Sections */}
       <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8 space-y-12">
-        {/* If 'All' is selected, show City Segments */}
         {selectedCity === 'All' ? (
           <>
-            {/* Makkah Segment */}
             {makkahHotels.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 pb-4 mb-6 border-b border-border">
@@ -61,7 +55,6 @@ export default function UmrahHotelsPage() {
               </div>
             )}
 
-            {/* Madinah Segment */}
             {madinahHotels.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 pb-4 mb-6 border-b border-border">
@@ -73,7 +66,6 @@ export default function UmrahHotelsPage() {
               </div>
             )}
 
-            {/* Others Segment */}
             {otherHotels.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 pb-4 mb-6 border-b border-border">
@@ -86,7 +78,6 @@ export default function UmrahHotelsPage() {
             )}
           </>
         ) : (
-          /* Single City Filter View */
           <div>
             <div className="flex items-center gap-2 pb-4 mb-6 border-b border-border">
               <span className="text-xl">{selectedCity === 'Makkah' ? '🕋' : '🕌'}</span>
@@ -157,7 +148,7 @@ function HotelGrid({ hotels }: { hotels: Hotel[] }) {
                 {hotel.locationDesc}
               </span>
               <Link
-                href={`/umrah-hotels/${hotel.id}`}
+                href={`/hotel-detail?id=${hotel.id}`}
                 className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm shrink-0"
               >
                 <span>View Details</span>
