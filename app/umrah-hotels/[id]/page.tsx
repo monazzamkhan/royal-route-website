@@ -1,13 +1,20 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { hotelsData } from '@/lib/hotels'
-import { MapPin, Star, CheckCircle2, ArrowLeft, Building2, Phone } from 'lucide-react'
+import { MapPin, Star, CheckCircle2, ArrowLeft, Phone } from 'lucide-react'
 import { site, whatsappLink } from '@/lib/site'
 
 interface PageProps {
   params: {
     id: string
   }
+}
+
+// Generate static routes for all hotels to prevent 404 errors
+export function generateStaticParams() {
+  return hotelsData.map((hotel) => ({
+    id: hotel.id,
+  }))
 }
 
 export default function HotelDetailPage({ params }: PageProps) {
@@ -129,7 +136,6 @@ export default function HotelDetailPage({ params }: PageProps) {
                 Conveniently located in {hotel.city}, offering easy access for pilgrims.
               </p>
               <div className="rounded-xl overflow-hidden border border-border h-48 bg-muted flex items-center justify-center text-xs font-medium text-muted-foreground">
-                {/* Embedded Map or Location Badge */}
                 <div className="text-center p-4">
                   <MapPin className="size-8 text-primary mx-auto mb-2" />
                   <span>{hotel.locationDesc}</span>
