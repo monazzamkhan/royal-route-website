@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState, useRef } from 'react'
-import { Menu, X, Phone, ChevronDown, ChevronRight } from 'lucide-react'
+import { Menu, X, Phone, ChevronDown, Building2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { site, whatsappLink } from '@/lib/site'
 import { WhatsappIcon } from '@/components/brand-icons'
@@ -20,7 +20,6 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
-  const [hotelsSubOpen, setHotelsSubOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   
   const moreRef = useRef<HTMLDivElement>(null)
@@ -35,7 +34,6 @@ export function SiteHeader() {
   useEffect(() => {
     setOpen(false)
     setMoreOpen(false)
-    setHotelsSubOpen(false)
   }, [pathname])
 
   // Close dropdown when clicking outside
@@ -43,7 +41,6 @@ export function SiteHeader() {
     function handleClickOutside(event: MouseEvent) {
       if (moreRef.current && !moreRef.current.contains(event.target as Node)) {
         setMoreOpen(false)
-        setHotelsSubOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -99,7 +96,7 @@ export function SiteHeader() {
             )
           })}
 
-          {/* More Dropdown Menu */}
+          {/* Clean Single Dropdown Menu */}
           <div className="relative" ref={moreRef}>
             <button
               onClick={() => setMoreOpen((prev) => !prev)}
@@ -115,47 +112,35 @@ export function SiteHeader() {
             </button>
 
             {moreOpen && (
-              <div className="absolute right-0 mt-2 w-52 rounded-xl border border-border bg-popover p-1.5 shadow-xl ring-1 ring-black/5 backdrop-blur z-50 space-y-1">
+              <div className="absolute right-0 mt-2 w-56 rounded-xl border border-border bg-popover p-2 shadow-xl ring-1 ring-black/5 backdrop-blur z-50 space-y-1">
                 
-                {/* Hotels Hover / Click Submenu Item */}
-                <div 
-                  className="relative group"
-                  onMouseEnter={() => setHotelsSubOpen(true)}
-                  onMouseLeave={() => setHotelsSubOpen(false)}
-                >
-                  <button
-                    onClick={() => setHotelsSubOpen((prev) => !prev)}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
-                  >
-                    <span>Hotels</span>
-                    <ChevronRight className="size-3.5 text-muted-foreground" />
-                  </button>
-
-                  {/* Submenu for Hotels */}
-                  {hotelsSubOpen && (
-                    <div className="absolute left-full top-0 ml-1.5 w-48 rounded-xl border border-border bg-popover p-1.5 shadow-xl ring-1 ring-black/5 space-y-0.5 z-50">
-                      <Link
-                        href="/umrah-hotels"
-                        className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
-                      >
-                        🕋 Makkah Hotels
-                      </Link>
-                      <Link
-                        href="/umrah-hotels"
-                        className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
-                      >
-                        🕌 Madinah Hotels
-                      </Link>
-                      <Link
-                        href="/umrah-hotels"
-                        className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-primary hover:bg-secondary transition-colors"
-                      >
-                        🏨 All Hotels Directory
-                      </Link>
-                    </div>
-                  )}
+                {/* Section Header: Hotels */}
+                <div className="px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <Building2 className="size-3.5 text-primary" /> Umrah Hotels
                 </div>
+                
+                <Link
+                  href="/umrah-hotels"
+                  className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors pl-7"
+                >
+                  🕋 Makkah Hotels
+                </Link>
+                <Link
+                  href="/umrah-hotels"
+                  className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors pl-7"
+                >
+                  🕌 Madinah Hotels
+                </Link>
+                <Link
+                  href="/umrah-hotels"
+                  className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-primary hover:bg-secondary transition-colors pl-7"
+                >
+                  🏨 All Hotels Directory
+                </Link>
 
+                <div className="my-1 border-t border-border/60" />
+
+                {/* Section Header: Other Pages */}
                 <Link
                   href="/travel-guides"
                   className="flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
@@ -210,7 +195,7 @@ export function SiteHeader() {
             <Link href="/" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary">Home</Link>
             <Link href="/packages" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary">Tour Packages</Link>
             <Link href="/umrah-packages" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary">Umrah Packages</Link>
-            <Link href="/umrah-hotels" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-primary font-bold hover:bg-secondary pl-6">↳ Hotels Directory</Link>
+            <Link href="/umrah-hotels" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-primary font-bold hover:bg-secondary pl-6">↳ Umrah Hotels Directory</Link>
             <Link href="/travel-guides" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary">Travel Guides</Link>
             <Link href="/about" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary">About Us</Link>
             <Link href="/terms" className="rounded-lg px-3.5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary">Terms &amp; Policy</Link>
