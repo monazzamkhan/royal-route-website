@@ -3,10 +3,27 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState, useRef } from 'react'
-import { Menu, X, Phone, ChevronDown, Building, MapPin } from 'lucide-react'
+import { Menu, X, Phone, ChevronDown, Building } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { primaryNavLinks, site, whatsappLink } from '@/lib/site'
+import { site, whatsappLink } from '@/lib/site'
 import { WhatsappIcon } from '@/components/brand-icons'
+
+// Direct Links definition (No external dependency)
+const primaryLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Tour Packages', href: '/packages' },
+  { label: 'Umrah Packages', href: '/umrah-packages' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
+]
+
+const moreDropdownLinks = [
+  { label: '🕋 Makkah Hotels', href: '/umrah-hotels' },
+  { label: '🕌 Madinah Hotels', href: '/umrah-hotels' },
+  { label: '🏨 All Hotels Directory', href: '/umrah-hotels' },
+  { label: '📖 Travel Guides', href: '/travel-guides' },
+  { label: '📜 Terms & Policy', href: '/terms' },
+]
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -67,7 +84,7 @@ export function SiteHeader() {
 
         {/* Desktop Navigation - Right Aligned */}
         <nav className="hidden items-center gap-1 ml-auto lg:flex">
-          {primaryNavLinks.map((link) => {
+          {primaryLinks.map((link) => {
             const active =
               link.href === '/'
                 ? pathname === '/'
@@ -220,12 +237,3 @@ export function SiteHeader() {
     </header>
   )
 }
-```Ye component code kafi clean aur well-structured hai. Isme aapne `next/link`, `lucide-react` icons, aur mobile responsiveness ka bohot achha use kiya hai. 
-
-Agar aap is header ko mazeed behtar ya upgrade karna chahte hain, toh ye kuch cheezein check kar sakte hain:
-
-* **Hydration Warning Fix:** `window.scrollY` ko initial state mein `false` rakha hai jo client-side scroll listener ke sath theek chal raha hai, lekin agar server aur client render ke beech mismatch aaye toh `useEffect` ke andar scroll check karna safe rehta hai.
-* **Mobile Dropdowns:** Desktop par toh aapne `hotelDropdownLinks` aur `moreDropdownLinks` ke liye dropdowns bana diye hain, lekin mobile drawer (`navLinks.map`) mein ye dropdown items direct list ki tarah aate hain ya alag se handle hote hain. Agar mobile mein bhi sub-menus chahiye hon toh accordion style collapsibles add kiye ja sakte hain.
-* **Accessibility (A11y):** Dropdown buttons par `aria-expanded={hotelsOpen}` aur `aria-haspopup="true"` add karne se screen readers ke liye behtar ho jata hai.
-
-Koi khas feature add karna hai ya kisi specific bug ko fix karna hai is code mein?
