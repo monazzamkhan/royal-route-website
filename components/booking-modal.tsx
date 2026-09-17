@@ -55,25 +55,42 @@ export function BookingModal({ open, onClose, pkg, date, counts, total }: Props)
 Please confirm my booking.`
 
   // Safepay Checkout Handler for Test Mode Video
-  const handleSafepayPayment = () => {
+ const handleSafepayPayment = () => {
     // @ts-ignore
     if (typeof window !== 'undefined' && window.safepay) {
-      // @ts-ignore
-      window.safepay.checkout.init({
-        environment: "sandbox",
-        key: "sec_b97a2b0c-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // Yahan apni Safepay test public/sandbox key dalen
-        amount: advanceAmount * 100, // Safepay amount paiso mein leta hai (is liye * 100)
-        currency: "PKR",
-        order_id: "ROYAL-" + Math.floor(Math.random() * 100000),
-        onComplete: function(response: any) {
-          alert("Test payment completed successfully!");
-        },
-        onCancelled: function(error: any) {
-          console.log("Payment cancelled", error);
-        }
-      });
+      try {
+        // @ts-ignore
+        let checkout = new window.safepay.Checkout({
+          environment: "sandbox",
+          key: "sec_b97a2b0c-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // Aap ki sandbox key
+          amount: advanceAmount * 100,
+          currency: "PKR",
+          order_id: "ROYAL-" + Math.floor(Math.random() * 100000)
+        });
+        checkout.render({
+          target: '#safepay-checkout',
+          onComplete: function(response: any) {
+            alert("Test payment successful!");
+          },
+          onCancelled: function(error: any) {
+            console.log("Cancelled", error);
+          }
+        });
+      } catch (err) {
+        // Fallback agar direct method ho
+        // @ts-ignore
+        window.safepay.checkout.init({
+          environment: "sandbox",
+          key: "sec_b97a2b0c-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          amount: advanceAmount * 100,
+          currency: "PKR",
+          order_id: "ROYAL-" + Math.floor(Math.random() * 100000),
+          onComplete: function(response: any) { alert("Success!"); },
+          onCancelled: function(error: any) {}
+        });
+      }
     } else {
-      alert("Safepay script is still loading. Please check your internet or try again.");
+      alert("Safepay script load ho rahi hai. 2 seconds baad dobara click karein!");
     }
   };
 
