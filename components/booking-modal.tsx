@@ -43,6 +43,7 @@ export function BookingModal({ open, onClose, pkg, date, counts, total }: Props)
   const passengers = `${counts.solo} Adult(s), ${counts.couple} Couple(s), ${counts.child} Child(ren)`
   const displayDate = date || 'To be confirmed'
   const valid = name.trim().length > 1 && phone.trim().length >= 7
+  const advanceAmount = Math.round(total * 0.4)
 
   const message = `Hello Royal Route Travel & Tours! I want to book:
 - Package: ${pkg.name}
@@ -52,6 +53,29 @@ export function BookingModal({ open, onClose, pkg, date, counts, total }: Props)
 - Total Calculated Amount: ${formatPKR(total)}
 - Client Name: ${name || '—'} | Phone: ${phone || '—'}
 Please confirm my booking.`
+
+  // Safepay Checkout Handler for Test Mode Video
+  const handleSafepayPayment = () => {
+    // @ts-ignore
+    if (typeof window !== 'undefined' && window.safepay) {
+      // @ts-ignore
+      window.safepay.checkout.init({
+        environment: "sandbox",
+        key: "sec_b97a2b0c-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // Yahan apni Safepay test public/sandbox key dalen
+        amount: advanceAmount * 100, // Safepay amount paiso mein leta hai (is liye * 100)
+        currency: "PKR",
+        order_id: "ROYAL-" + Math.floor(Math.random() * 100000),
+        onComplete: function(response: any) {
+          alert("Test payment completed successfully!");
+        },
+        onCancelled: function(error: any) {
+          console.log("Payment cancelled", error);
+        }
+      });
+    } else {
+      alert("Safepay script is still loading. Please check your internet or try again.");
+    }
+  };
 
   return (
     <div
@@ -196,13 +220,15 @@ Please confirm my booking.`
           <div className="mt-5">
             <div className="flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/5 p-3 text-sm text-foreground">
               <ShieldCheck className="size-5 shrink-0 text-primary" />
-              Pay 40% advance ({formatPKR(Math.round(total * 0.4))}) to confirm.
+              Pay 40% advance ({formatPKR(advanceAmount)}) to confirm.
               Send the receipt on WhatsApp.
             </div>
 
+            {/* Safepay Checkout Button */}
             <button
               type="button"
-              className="mt-4 flex w-full items-center justify-between gap-2 rounded-xl border border-border bg-secondary/40 p-4 text-left"
+              onClick={handleSafepayPayment}
+              className="mt-4 flex w-full items-center justify-between gap-2 rounded-xl border border-border bg-secondary/40 p-4 text-left transition-all hover:bg-secondary cursor-pointer"
             >
               <span className="flex items-center gap-3">
                 <span className="flex size-10 items-center justify-center rounded-lg bg-gold text-gold-foreground">
@@ -247,7 +273,7 @@ Please confirm my booking.`
             <a
               href={whatsappLink(
                 `${message}\n\nI will pay the 40% advance (${formatPKR(
-                  Math.round(total * 0.4),
+                  advanceAmount,
                 )}) and share the receipt.`,
               )}
               target="_blank"
