@@ -125,9 +125,9 @@ export const packages: TourPackage[] = [
       'Babusar Top',
       'Saif Ul Malook',
     ],
-    soloPrice: 15499,
-    couplePrice: 36000,
-    childPrice: 8999,
+    soloPrice: 17499,
+    couplePrice: 38000,
+    childPrice: 9999,
     itinerary: [
       {
         day: 'Day 0',
