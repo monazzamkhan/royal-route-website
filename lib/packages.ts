@@ -60,9 +60,9 @@ export const packages: TourPackage[] = [
       'Arang Kel',
       'Upper Neelum',
     ],
-    soloPrice: 15499,
-    couplePrice: 36000,
-    childPrice: 8999,
+    soloPrice: 17499,
+    couplePrice: 38000,
+    childPrice: 9999,
     itinerary: [
       {
         day: 'Day 0',
@@ -189,9 +189,9 @@ export const packages: TourPackage[] = [
       'Mahudand Lake',
       'Paloga Village',
     ],
-    soloPrice: 15499,
-    couplePrice: 36000,
-    childPrice: 8999,
+    soloPrice: 17499,
+    couplePrice: 38000,
+    childPrice: 9999,
     itinerary: [
       {
         day: 'Day 0',
